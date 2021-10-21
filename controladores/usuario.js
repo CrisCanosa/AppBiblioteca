@@ -1,6 +1,6 @@
 class Usuario {
     constructor(id, nombre, direccion, codigoPostal, pais) {
-        this.id = id
+        this.id = id || this.crearIdUsuario()
         this.nombre = nombre
         this.direccion = direccion
         this.codigoPostal = codigoPostal
@@ -8,10 +8,10 @@ class Usuario {
     }
 
     //metodo que crea los usuarios ID
-    crearUsuariosId() {
+    crearIdUsuario() {
         let letras = ['a', 'b', 'c', 'v', 'g', 'e', 'h', 'z', 'r'] //array de letras
         let numeros = [1, 3, 5, 7, 9, 0, 6, 4, 8] //array de números
-        let usuarioID = '' //string vacio donde se va a generar la contraseña
+        let usuarioID = '' //string vacio donde se van a generar los id
         for (let i = 0; i < 6; i++) { //definimos la i porque solo va a estar en el momento del bucle
             usuarioID = usuarioID + letras[Math.ceil(Math.random() * letras.length - 1)] //generamos las letras
             usuarioID = usuarioID + numeros[Math.ceil(Math.random() * numeros.length - 1)] //generamos los numeros
@@ -32,7 +32,7 @@ class Usuario {
     }
     //metodo que borra los usuarios ID
     borrarUsuariosId() {
-        delete Usuario.id
+        delete this.id
     }
     //metodo que calculo los libros prestados y también los que están vencidos
     libros_prestados() {
@@ -41,7 +41,7 @@ class Usuario {
 }
 
 let usuario = new Usuario()
-usuario.crearUsuariosId()
+usuario.crearIdUsuario()
 
 usuario.modificarUsuarioId()
 
