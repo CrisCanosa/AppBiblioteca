@@ -1,13 +1,26 @@
+import { libro } from "./libro.js";
+
 class Usuario {
-    constructor(id, nombre, direccion, codigoPostal, pais) {
-        this.id = id || this.crearIdUsuario()
+    constructor(nombre, primer_apellido, segundo_apellido, fecha_alta, fecha_baja) {
+        this.id = this.crearIdUsuario()
         this.nombre = nombre
-        this.direccion = direccion
-        this.codigoPostal = codigoPostal
-        this.pais = pais
+        this.primer_apellido = primer_apellido
+        this.segundo_apellido = segundo_apellido
+        this.fecha_alta = fecha_alta
+        this.fecha_baja = fecha_baja
+        
     }
 
-    //metodo que crea los usuarios ID
+    // //metodo que crea los usuarios ID
+    // crearIdUsuario(arrayUsu) {
+    //     let idAleatorio = Math.random()  //array de letras
+    //     for (let i = 0; i < arrayUsu.length; i++) {
+    //         while(idAleatorio === arrayUsu[i].id){
+    //             this.crearIdUsuario(arrayUsu)
+    //         }
+    //         return idAleatorio
+    //     }
+    // }
     crearIdUsuario() {
         let letras = ['a', 'b', 'c', 'v', 'g', 'e', 'h', 'z', 'r'] //array de letras
         let numeros = [1, 3, 5, 7, 9, 0, 6, 4, 8] //array de números
@@ -31,19 +44,21 @@ class Usuario {
         }
     }
     //metodo que borra los usuarios ID
-    borrarUsuariosId() {
-        delete this.id
-    }
+    // borrarUsuariosId() {
+    //     const id = this.id
+    //     ids = 
+    // }
     //metodo que calculo los libros prestados y también los que están vencidos
     libros_prestados() {
+        let total = 0
+
 
     }
 }
 
-let usuario = new Usuario()
-usuario.crearIdUsuario()
+let usuario = new Usuario('Cris',null,null,null)
+console.log(usuario.id)
 
-usuario.modificarUsuarioId()
 
-export default Usuario;
+//export default Usuario;
 
