@@ -1,17 +1,29 @@
 //Importar las clases necesarias
-import { Libro } from "./controladores/libro.js";
-import { Transaccion } from "./controladores/transaccion";
-import { Usuario } from "./controladores/transaccion";
+//import { libro } from "./controladores/libro.js";
+//import { transaccion } from "./controladores/transaccion.js";
+import { usuario } from "./controladores/usuario.js";
  
-export default class Biblioteca{
-    constructor(id, nombre, direccion, codigoPostal, pais){
-        this.id = id;
-        this.nombre = nombre;
-        this.direccion = direccion
-        this.codigoPostal = codigoPostal
-        this.pais = pais
+class Biblioteca{
+    constructor(nombre, direccion, codigoPostal, pais){
+        this.id = this.crearIdBiblioteca()
+        this.nombre = nombre || ''
+        this.direccion = direccion || ''
+        this.codigoPostal = codigoPostal || ''
+        this.pais = pais || ''
     }
-    
+
+
+    /**
+    * @version 0.0.1
+    * Método que genera de forma aleatoria un id de la biblioteca con valor numérico con longitud 6 
+    * 
+    * @return {string}
+    */
+    crearIdBiblioteca() {
+        this.id = Math.floor(Math.random() * (999999 - 111111 + 1) + 111111)
+        return this.id          
+    }
+
     //La clase biblioteca HA DE TENER UNA FUNCION QUE CALCULE CUALES SON LOS LIBROS QUE TIENEN EL PRESTAMO EXPIRADO
     librosPrestamosExpirados(arrayDeLibrosTotalesDeLaClaseLibro){
         /*
@@ -35,7 +47,8 @@ export default class Biblioteca{
     Esta parte podría mirar de hacerse aquí a continuación de la función de librosPrestamosExpirados()
     Crear aquí una función que llame a los usuarios de la clase Usuario cuyos libros han sido expirados*/
 }
-biblioteca = new Biblioteca(1, 'Vilas', 'Rúa Ribadavia, 5', '15007', 'España')
+
+biblioteca = new Biblioteca('Vilas', 'Rúa Ribadavia, 5', '15007', 'España')
 console.log(biblioteca)
-
-
+usuario = new Usuario()
+export default Biblioteca;
