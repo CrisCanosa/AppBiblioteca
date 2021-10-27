@@ -1,3 +1,5 @@
+import { transaccion } from "./controladores/transaccion.js";
+
 class Bibliotecario{
     constructor(id, nombre, primerApellido, segundoApellido, fechaAlta, fechaBaja){
         this.id=id || this.crearIdBibliotecario()
@@ -22,7 +24,8 @@ class Bibliotecario{
 
     //Método para conocer las transacciones que ya se han ejecutado
     transaccionesEjecutadas(){
-    
+        let transacciones=[]
+        transacciones.push(transaccion.id)
     }
 }
 
