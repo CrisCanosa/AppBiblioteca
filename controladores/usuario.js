@@ -1,11 +1,11 @@
 class Usuario {
     constructor(nombre, primer_apellido, segundo_apellido, fecha_alta, fecha_baja) {
         this.id = this.crearIdUsuario()
-        this.nombre = nombre || 'nombre'
-        this.primer_apellido = primer_apellido || 'primer_Apellido'
-        this.segundo_apellido = segundo_apellido || 'segundo_Apellido'
-        this.fecha_alta = fecha_alta || 'fecha_Alta'
-        this.fecha_baja = fecha_baja || 'fecha_baja'
+        this.nombre = nombre || 'Cris'
+        this.primer_apellido = primer_apellido || 'Canosa'
+        this.segundo_apellido = segundo_apellido || 'Perez'
+        this.fecha_alta = fecha_alta || '19/10/2021'
+        this.fecha_baja = fecha_baja || '29/10/2021'
         
     }
 
@@ -32,25 +32,18 @@ class Usuario {
     }
 
     //metodo que modifica los usuarios 
-    // modificarUsuario(modificarUsu) {
-    //     if (typeof modificarId != 'string') { //comprobamos que sea un string
-    //         console.log('El nuevo id tiene que ser un string.')
-    //     } else if (modificarId.length <= 6) { //si no tiene 6 caracteres nos devuelve este mensaje
-    //         console.log('El nuevo id de usuario tiene que ser de más de 6 caracteres.')
-    //     } else {
-    //         this.id = modificarId //le decimos que la contraseña  ahora va a ser nuevaContrasenha
-    //     }
-    // }
+    modificarUsuarios(modificarNombre, modificarPrimerApellido, modificarSegundoApellido, modificarFA,modificarFB) {
+       
+    }
     //metodo que borra los usuarios ID
-    // borrarUsuariosId() {
-    //     const id = this.id
-    //     ids = 
-    // }
+    borrarUsuarios() {
+    
+    }
 
 
     //metodo que calculo los libros prestados y también los que están vencidos
     libros_prestados() {
-        let total = 0
+    
 
 
     }
