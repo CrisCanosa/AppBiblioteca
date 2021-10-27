@@ -53,4 +53,4 @@ let usuario = new Usuario('Cris',null,null,null)
 console.log(usuario.id)
 
 
-//export default Usuario;
+export default Usuario;
