@@ -25,19 +25,29 @@ class Libro {
     }
 
 
-    getAleatoryId(){
+    getAleatoryId() {
         let letters = ['a','b','c','d','e','f','g','h','i']
         let numbers = [1,2,3,4,5,6,7,8,9]
         let id = ''
         for (let i = 0; i < 6; i++){ //la i tiene que estar definida aquí porque sólo existe en el momento que existe el bucle
             id = id + letters[this.getAleatoryNumber(letters.length)] + numbers[this.getAleatoryNumber(numbers.length)]
-    }
+        }
 
         return id
     }
 
-    getAleatoryNumber(max){
+    getAleatoryNumber(max) {
         return Math.floor(Math.random * max)
     }
+
+
+    
+    esPrestado() {
+        if(this.prestado=1) { //entiendo que esto tiene que preguntar a otra parte del código si está prestado o no.
+            return true
+        }else {            
+            return false          
+    }
+}
 }
 //
