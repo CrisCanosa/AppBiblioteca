@@ -1,7 +1,7 @@
 //Importar las clases necesarias
 //import { libro } from "./controladores/libro.js";
 //import { transaccion } from "./controladores/transaccion.js";
-import { Usuario } from "./controladores/usuario.js";
+import { Usuario } from "./usuario.js";
  
 class Biblioteca{
     constructor(nombre, direccion, codigoPostal, pais){
@@ -52,4 +52,3 @@ biblioteca = new Biblioteca('Vilas', 'Rúa Ribadavia, 5', '15007', 'España')
 console.log(biblioteca)
 usuario = new Usuario()
 console.log(usuario)
-export default Biblioteca;
