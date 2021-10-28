@@ -1,12 +1,12 @@
 class Usuario {
-    constructor(nombre, primer_apellido, segundo_apellido, fecha_alta, fecha_baja) {
+    constructor(id,nombre, primer_apellido, segundo_apellido, fecha_alta, fecha_baja) {
         this.id = this.crearIdUsuario()
         this.nombre = nombre || 'Cris'
-        this.primer_apellido = primer_apellido || 'Canosa'
-        this.segundo_apellido = segundo_apellido || 'Perez'
-        this.fecha_alta = fecha_alta || '19/10/2021'
+        this.primerApellido = primer_apellido || 'Canosa'
+        this.segundoApellido = segundo_apellido || 'Perez'
+        this.fecha_alta = fecha_alta || Date()
         this.fecha_baja = fecha_baja || '29/10/2021'
-        
+        this.arrayUsuarios= []
     }
 
     // //metodo que crea los usuarios ID
@@ -34,10 +34,17 @@ class Usuario {
     //metodo que modifica los usuarios 
     modificarUsuarios(modificarNombre, modificarPrimerApellido, modificarSegundoApellido, modificarFA,modificarFB) {
        
-    }
+       this.nombre = modificarNombre
+       this.primerApellido = modificarPrimerApellido
+       this.segundoApellido = modificarSegundoApellido
+    
+    }    
+    
+
+  
     //metodo que borra los usuarios ID
     borrarUsuarios() {
-    
+        delete Usuario.id
     }
 
 
@@ -47,10 +54,10 @@ class Usuario {
 
 
     }
-}
 
+}
 let usuario = new Usuario('Cris',null,null,null)
 console.log(usuario.id)
+console.log(usuario)
 
-
-export default Usuario;
+//export default Usuario;
