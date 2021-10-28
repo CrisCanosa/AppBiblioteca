@@ -1,4 +1,5 @@
 import { transaccion } from "./controladores/transaccion.js";
+import { usuario } from "./controladores/usuario.js";
 
 class Bibliotecario{
     constructor(id, nombre, primerApellido, segundoApellido, fechaAlta, fechaBaja){
