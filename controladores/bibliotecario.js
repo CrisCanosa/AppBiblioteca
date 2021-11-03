@@ -1,5 +1,6 @@
 import { transaccion } from "./transaccion.js";
-import { usuario } from "./usuario.js";
+import { Usuario } from "./usuario.js";
+import { Libro } from "./libro.js";
 
 class Bibliotecario{
     constructor(id, nombre, primerApellido, segundoApellido, fechaAlta, fechaBaja){
@@ -25,8 +26,8 @@ class Bibliotecario{
 
     //Método para conocer las transacciones que ya se han ejecutado
     transaccionesEjecutadas(){
-        let transacciones=[]
-        transacciones.push(transaccion.id)
+        let nTransacción = new transaccion(this.id, Usuario.id, Libro.id)
+        return nTransacción
     }
 }
 
