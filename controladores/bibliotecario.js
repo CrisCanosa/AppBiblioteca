@@ -29,7 +29,34 @@ class Bibliotecario{
         let nTransacción = new transaccion(this.id, Usuario.id, Libro.id)
         return nTransacción
     }
+
+    //Método para modificar usuarios
+    modUsuario(id, nombre, apellido1, apellido2, fechaBaja){
+        if(Usuario.id===id){
+            Usuario.nombre=nombre
+            Usuario.apellido1=apellido1
+            Usuario.apellido2=apellido2
+            Usuario.fechaBaja=fechaBaja
+        }
+        else{
+            console.log('No existe un usuario con este id.')
+        }
+    }
+    
+    /*borrarUsuario(id){
+        if (this.id===id){
+            this.id=null
+            this.nombre=null
+            this.primerApellido=null
+            this.segundoApellido=null
+            this.fechaAlta=null
+            this.fechaBaja=null
+        }
+        else{
+            console.log('No existe un usuario con este id.')
+        }
+    }*/
 }
 
-let bibliotecario=new Bibliotecario()
-console.log(bibliotecario)
+let crearBibliotecario=new Bibliotecario()
+console.log(crearBibliotecario)
