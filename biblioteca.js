@@ -1,9 +1,12 @@
 //Importar las clases necesarias
 //import { libro } from "./controladores/libro.js";
 //import { transaccion } from "./controladores/transaccion.js";
-import { Usuario } from "./usuario.js";
- 
-class Biblioteca{
+import usuario from "./controladores/usuario.js";
+import libro from "./controladores/libro.js";
+import transaccion from "./controladores/transaccion.js"
+
+class Biblioteca {
+
     constructor(nombre, direccion, codigoPostal, pais){
         this.id = this.crearIdBiblioteca()
         this.nombre = nombre || ''
@@ -25,7 +28,7 @@ class Biblioteca{
     }
 
     //La clase biblioteca HA DE TENER UNA FUNCION QUE CALCULE CUALES SON LOS LIBROS QUE TIENEN EL PRESTAMO EXPIRADO
-    librosPrestamosExpirados(arrayDeLibrosTotalesDeLaClaseLibro){
+    librosPrestamosExpirados(arrayDeLibrosTotalesDeLaClaseLibro) {
         /*
         Necesitamos crear un array vacío para rellenarlo posteriormente de los libros que tienen el préstamo expirado
         un for con la siguiente condicion
@@ -46,9 +49,6 @@ class Biblioteca{
     /*Ha de poder enviar mensajes a los usuarios si se pasan de la fecha de prestamo
     Esta parte podría mirar de hacerse aquí a continuación de la función de librosPrestamosExpirados()
     Crear aquí una función que llame a los usuarios de la clase Usuario cuyos libros han sido expirados*/
-}
 
-biblioteca = new Biblioteca('Vilas', 'Rúa Ribadavia, 5', '15007', 'España')
-console.log(biblioteca)
-usuario = new Usuario()
-console.log(usuario)
+    biblioteca = new Biblioteca('Vilas', 'Rúa Ribadavia, 5', '15007', 'España')
+}
