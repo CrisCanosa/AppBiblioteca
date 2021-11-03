@@ -1,12 +1,12 @@
 class Usuario {
-    constructor(id,nombre, primer_apellido, segundo_apellido, fecha_alta, fecha_baja) {
+    constructor(id,nombre, primerApellido, segundoApellido, fechaAlta, fechaBaja) {
         this.id = this.crearIdUsuario()
-        this.nombre = nombre || 'Cris'
-        this.primerApellido = primer_apellido || 'Canosa'
-        this.segundoApellido = segundo_apellido || 'Perez'
-        this.fecha_alta = fecha_alta || Date()
-        this.fecha_baja = fecha_baja || '29/10/2021'
-        this.arrayUsuarios= []
+        this.nombre = nombre || 'Sin nombre'
+        this.primerApellido = primerApellido || 'Sin primerApellido'
+        this.segundoApellido = segundoApellido || 'Sin segundoApellido'
+        this.fechaAlta = fechaAlta || Date()
+        this.fechaBaja = fechaBaja || 'Usuario Activo'
+        
     }
 
     // //metodo que crea los usuarios ID
@@ -33,7 +33,6 @@ class Usuario {
 
     //metodo que modifica los usuarios 
     modificarUsuarios(modificarNombre, modificarPrimerApellido, modificarSegundoApellido, modificarFA,modificarFB) {
-       
        this.nombre = modificarNombre
        this.primerApellido = modificarPrimerApellido
        this.segundoApellido = modificarSegundoApellido
@@ -44,16 +43,9 @@ class Usuario {
   
     //metodo que borra los usuarios ID
     borrarUsuarios() {
-        delete Usuario.id
+      
     }
 
-
-    //metodo que calculo los libros prestados y también los que están vencidos
-    libros_prestados() {
-    
-
-
-    }
 
 }
 let usuario = new Usuario('Cris',null,null,null)
