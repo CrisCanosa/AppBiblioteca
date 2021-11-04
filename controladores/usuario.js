@@ -29,7 +29,7 @@ class Usuario {
         this.fechaAlta = modificarFA || this.fechaAlta
         this.fechaBaja = modificarFB || this.fechaBaja
     }
-    //metodo que borra los usuarios ID
+    //metodo que borra los usuarios
     borrarUsuarios(listUsuarios) {
         listUsuarios.forEach(e => {
             if(this.id === e.id){
