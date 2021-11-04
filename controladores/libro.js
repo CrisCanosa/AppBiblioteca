@@ -1,6 +1,6 @@
 /*Vilas 
 
- - LIBRO
+- LIBRO
         - Id 
         - Titulo
         - Autor
@@ -14,8 +14,7 @@
 
 
 class Libro {
-
-    constructor(id,titulo,autor,editorial,fechaprimeraedicion,prestado,venta,historicoPrestamos) {
+    constructor(id, titulo, autor, editorial, fechaprimeraedicion, prestado, venta, historicoPrestamos) {
         this.id = id || this.getAleatoryId()
         this.titulo = titulo || "crónica de una muerte anunciada"
         this.autor = autor || "gabriel garcía márquez"
@@ -28,10 +27,10 @@ class Libro {
 
 
     getAleatoryId() {
-        let letters = ['a','b','c','d','e','f','g','h','i']
-        let numbers = [1,2,3,4,5,6,7,8,9]
+        let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+        let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
         let id = ''
-        for (let i = 0; i < 6; i++){ //la i tiene que estar definida aquí porque sólo existe en el momento que existe el bucle
+        for (let i = 0; i < 6; i++) { //la i tiene que estar definida aquí porque sólo existe en el momento que existe el bucle
             id = id + letters[this.getAleatoryNumber(letters.length)] + numbers[this.getAleatoryNumber(numbers.length)]
         }
 
@@ -42,20 +41,15 @@ class Libro {
         return Math.floor(Math.random * max)
     }
 
-
-    
-    esPrestado() {
-        if(this.prestado=1) { //entiendo que esto tiene que preguntar a otra parte del código si está prestado o no.
-            return true
-        }else {            
-            return false          
+    borrarLibros(listLibros) {
+        listLibros.forEach(e => {
+            if (this.id === e.id) {
+                listLibros.splice(listLibros.indexOf(e), 1)
+            }
+        })
     }
-/*
-    historicoPrestamos() {
 
-        
-             
-    } */
+
 }
-}
+export default Libro;
 //
