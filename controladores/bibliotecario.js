@@ -52,5 +52,9 @@ class Bibliotecario{
     }*/
 }
 
-let crearBibliotecario=new Bibliotecario()
-console.log(crearBibliotecario)
+let bibliotecario1=new Bibliotecario('Roi', 'Baldomir')
+let bibliotecario2=new Bibliotecario('Tamara', 'López')
+let bibliotecario3=new Bibliotecario('María', 'Vázquez')
+console.log(bibliotecario1)
+console.log(bibliotecario2)
+console.log(bibliotecario3)
