@@ -41,7 +41,7 @@ class Libro {
         return Math.floor(Math.random * max)
     }
 
-    /*CAMBIA ESTO*/
+    /*CAMBIA ESTO POR LOS PARAMETROS DE LA CLASE LIBRO*/
     modificarLibros(modificarNombre, modificarPrimerApellido, modificarSegundoApellido, modificarFA, modificarFB) {
         this.nombre = modificarNombre || this.nombre
         this.primerApellido = modificarPrimerApellido || this.primerApellido
