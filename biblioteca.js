@@ -31,7 +31,7 @@ class Biblioteca {
 let biblioteca = new Biblioteca('Vilas', 'Rúa Ribadavia, 5', '15007', 'España')
 
 
-let usuario = new Usuario('Cris', 'Canosa', 'Perez', null, null)
+let usuario = new Usuario('Cris', 'Suarez', 'Castro', null, null)
 let arrayUsuarios = []
 
 arrayUsuarios.push(usuario)

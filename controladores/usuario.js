@@ -41,7 +41,7 @@ class Usuario {
 }
 
 //USUARIOS
-// let usuario = new Usuario('Cris', 'Canosa', 'Perez', null, null)
+// let usuario = new Usuario('Cris', 'Suarez', 'Castro', null, null)
 // let usuario2 = new Usuario('Alberto', 'Fuentes', 'Rodriguez', null, null)
 // let usuario3 = new Usuario('Victor', 'Dominguez', 'Fraga', null, null)
 // let usuario4 = new Usuario('Pedro', 'Mansilla', 'Castro', null, null)
