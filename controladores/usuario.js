@@ -9,17 +9,7 @@ class Usuario {
 
     }
 
-    // //metodo que crea los usuarios ID
-    // crearIdUsuario(arrayUsu) {
-    //     let idAleatorio = Math.random()  //array de letras
-    //     for (let i = 0; i < arrayUsu.length; i++) {
-    //         while(idAleatorio === arrayUsu[i].id){
-    //             this.crearIdUsuario(arrayUsu)
-    //         }
-    //         return idAleatorio
-    //     }
-    // }
-   
+  
     //metodo crear id de usuarios
     crearIdUsuario() {
         let letras = ['a', 'b', 'c', 'v', 'g', 'e', 'h', 'z', 'r'] //array de letras
@@ -40,23 +30,31 @@ class Usuario {
         this.fechaBaja = modificarFB || this.fechaBaja
     }
     //metodo que borra los usuarios ID
-    borrarUsuarios() {
+    borrarUsuarios(listUsuarios) {
+        listUsuarios.forEach(e => {
+            if(this.id === e.id){
+                listUsuarios.splice(listUsuarios.indexOf(e), 1)
+            }
+        })
     }
 
 }
+
 //USUARIOS
-let usuario = new Usuario('Cris', 'Canosa', 'Perez', null, null)
-let usuario2 = new Usuario('Alberto', 'Fuentes', 'Rodriguez', null, null)
-let usuario3 = new Usuario('Victor', 'Dominguez', 'Fraga', null, null)
-let usuario4 = new Usuario('Pedro', 'Mansilla', 'Castro', null, null)
-let usuario5 = new Usuario('Silvia', 'Areas', 'Baldomir', null, null)
-let usuario6  = new Usuario('Alejgrando', 'Mato', 'Gagino', null, null)
+// let usuario = new Usuario('Cris', 'Canosa', 'Perez', null, null)
+// let usuario2 = new Usuario('Alberto', 'Fuentes', 'Rodriguez', null, null)
+// let usuario3 = new Usuario('Victor', 'Dominguez', 'Fraga', null, null)
+// let usuario4 = new Usuario('Pedro', 'Mansilla', 'Castro', null, null)
+// let usuario5 = new Usuario('Silvia', 'Areas', 'Baldomir', null, null)
+// let usuario6  = new Usuario('Alejgrando', 'Mato', 'Gagino', null, null)
 
 //MODIFICAR USUARIOS
-usuario.modificarUsuarios('','Martinez','Tarrio', '', '')
-usuario2.modificarUsuarios('Yago', '', '', '', '')
+//usuario.modificarUsuarios('','Martinez','Tarrio', '', '')
+//usuario2.modificarUsuarios('Yago', '', '', '', '')
 
-console.log(usuario)
-console.log(usuario2)
 
+//console.log(usuario2)
+
+// usuario.borrarUsuarios(usuario)
+// console.log('Borrado el usuario' + usuario)
 export default Usuario;
