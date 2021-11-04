@@ -25,36 +25,18 @@ class Bibliotecario{
 
     //Método para conocer las transacciones que ya se han ejecutado
     transaccionesEjecutadas(){
-        return console.log(transaccion)
+        return console.log()
     }
 
-    //Método para modificar usuarios
-    modUsuario(nombre, apellido1, apellido2, fechaAlta, fechaBaja){
-            Usuario.nombre=nombre || Usuario.nombre
-            Usuario.apellido1=apellido1 || Usuario.apellido1
-            Usuario.apellido2=apellido2 || Usuario.apellido2
-            Usuario.fechaAlta=fechaAlta || Usuario.fechaAlta
-            Usuario.fechaBaja=fechaBaja || Usuario.fechaBaja
-    }
-    
-    /*borrarUsuario(id){
-        if (this.id===id){
-            this.id=null
-            this.nombre=null
-            this.primerApellido=null
-            this.segundoApellido=null
-            this.fechaAlta=null
-            this.fechaBaja=null
-        }
-        else{
-            console.log('No existe un usuario con este id.')
-        }
-    }*/
 }
 
+let arrayBibliotecarios= []
 let bibliotecario1=new Bibliotecario('Roi', 'Baldomir')
 let bibliotecario2=new Bibliotecario('Tamara', 'López')
 let bibliotecario3=new Bibliotecario('María', 'Vázquez')
 console.log(bibliotecario1)
 console.log(bibliotecario2)
 console.log(bibliotecario3)
+
+arrayBibliotecarios.push(bibliotecario1,bibliotecario2,bibliotecario3)
+console.log(arrayBibliotecarios)
