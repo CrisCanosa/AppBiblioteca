@@ -14,7 +14,7 @@
 
 
 class Libro {
-    constructor(id, titulo, autor, editorial, fechaprimeraedicion, prestado, venta, historicoPrestamos) {
+    constructor(titulo, autor, editorial, fechaprimeraedicion, prestado, venta, historicoPrestamos) {
         this.id = id || this.getAleatoryId()
         this.titulo = titulo || "crónica de una muerte anunciada"
         this.autor = autor || "gabriel garcía márquez"
@@ -41,6 +41,15 @@ class Libro {
         return Math.floor(Math.random * max)
     }
 
+    /*CAMBIA ESTO*/
+    modificarLibros(modificarNombre, modificarPrimerApellido, modificarSegundoApellido, modificarFA, modificarFB) {
+        this.nombre = modificarNombre || this.nombre
+        this.primerApellido = modificarPrimerApellido || this.primerApellido
+        this.segundoApellido = modificarSegundoApellido || this.segundoApellido
+        this.fechaAlta = modificarFA || this.fechaAlta
+        this.fechaBaja = modificarFB || this.fechaBaja
+    }
+    
     borrarLibros(listLibros) {
         listLibros.forEach(e => {
             if (this.id === e.id) {
@@ -48,6 +57,7 @@ class Libro {
             }
         })
     }
+    
 
 
 }
