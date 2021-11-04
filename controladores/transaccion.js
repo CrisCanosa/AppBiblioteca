@@ -1,8 +1,8 @@
 class transaccion {
-    constructor(idBibliotecario,IdUsuario,idLibro){
+    constructor(idBibliotecario,idUsuario,idLibro){
         this.idLibro = idLibro
         this.idBibliotecario = idBibliotecario
-        this.IdUsuario = IdUsuario
+        this.idUsuario = idUsuario
         this.fechaPrestamo = Date()
         this.diasMaximo = 20
         this.fechaLimitePrestamo = new Date(new Date().setDate(new Date().getDate() + 20))   

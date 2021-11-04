@@ -1,12 +1,12 @@
 class Usuario {
-    constructor(id,nombre, primerApellido, segundoApellido, fechaAlta, fechaBaja) {
+    constructor(nombre, primerApellido, segundoApellido, fechaAlta, fechaBaja) {
         this.id = this.crearIdUsuario()
         this.nombre = nombre || 'Sin nombre'
         this.primerApellido = primerApellido || 'Sin primerApellido'
         this.segundoApellido = segundoApellido || 'Sin segundoApellido'
         this.fechaAlta = fechaAlta || Date()
         this.fechaBaja = fechaBaja || 'Usuario Activo'
-        
+
     }
 
     // //metodo que crea los usuarios ID
@@ -19,28 +19,22 @@ class Usuario {
     //         return idAleatorio
     //     }
     // }
-
     //método set
-   
-    setNombre(nuevoNombre){
+    setNombre(nuevoNombre) {
         this.nombre = nuevoNombre
     }
-    
-    setPrimerApellido(nuevoApellido){
+    setPrimerApellido(nuevoApellido) {
         this.primerApellido = nuevoApellido
     }
-    
-    setSegundoApellido(nuevo2Apellido){
+    setSegundoApellido(nuevo2Apellido) {
         this.segundoApellido = nuevo2Apellido
     }
-    setfechaAlta(nuevaFA){
+    setfechaAlta(nuevaFA) {
         this.fechaAlta = nuevaFA
     }
-    
-    setfechaBaja(nuevaFB){
+    setfechaBaja(nuevaFB) {
         this.fechaBaja = nuevaFB
     }
-    
     //metodo crear id de usuarios
     crearIdUsuario() {
         let letras = ['a', 'b', 'c', 'v', 'g', 'e', 'h', 'z', 'r'] //array de letras
@@ -51,30 +45,33 @@ class Usuario {
             usuarioID = usuarioID + numeros[Math.ceil(Math.random() * numeros.length - 1)] //generamos los numeros
         }
         return usuarioID //devolvemos el usuario ID
-
     }
-
     //metodo que modifica los usuarios 
-    modificarUsuarios(modificarNombre, modificarPrimerApellido, modificarSegundoApellido,modificarFA,modificarFB) {
-       this.nombre = modificarNombre
-       this.primerApellido = modificarPrimerApellido
-       this.segundoApellido = modificarSegundoApellido
-       this.fechaAlta = modificarFA
-       this.fechaBaja = modificarFB
-    }    
-    
-
-  
+    modificarUsuarios(modificarNombre, modificarPrimerApellido, modificarSegundoApellido, modificarFA, modificarFB) {
+        this.nombre = modificarNombre || this.nombre
+        this.primerApellido = modificarPrimerApellido || this.primerApellido
+        this.segundoApellido = modificarSegundoApellido || this.segundoApellido
+        this.fechaAlta = modificarFA || this.fechaAlta
+        this.fechaBaja = modificarFB || this.fechaBaja
+    }
     //metodo que borra los usuarios ID
     borrarUsuarios() {
-        
     }
 
-
 }
-let usuario = new Usuario('Cris',null,null,null,null)
-usuario.nombre = "Juan"
+//USUARIOS
+let usuario = new Usuario('Cris', 'Canosa', 'Perez', null, null)
+let usuario2 = new Usuario('Alberto', 'Fuentes', 'Rodriguez', null, null)
+let usuari3 = new Usuario('Victor', 'Dominguez', 'Fraga', null, null)
+let usuario4 = new Usuario('Pedro', 'Mansilla', 'Castro', null, null)
+let usuario5 = new Usuario('Silvia', 'Areas', 'Baldomir', null, null)
+let usuario6  = new Usuario('Alejgrando', 'Mato', 'Gagino', null, null)
+
+//MODIFICAR USUARIOS
+usuario.modificarUsuarios('','Martinez','Tarrio', '', '')
+usuario2.modificarUsuarios('Yago', '', '', '', '')
 
 console.log(usuario)
+console.log(usuario2)
 
-//export default Usuario;
+export default Usuario;
