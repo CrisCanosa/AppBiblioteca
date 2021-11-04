@@ -54,4 +54,3 @@ class Bibliotecario{
 
 let crearBibliotecario=new Bibliotecario()
 console.log(crearBibliotecario)
-crearBibliotecario.transaccionesEjecutadas()
