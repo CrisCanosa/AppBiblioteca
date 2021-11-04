@@ -19,22 +19,7 @@ class Usuario {
     //         return idAleatorio
     //     }
     // }
-    //método set
-    setNombre(nuevoNombre) {
-        this.nombre = nuevoNombre
-    }
-    setPrimerApellido(nuevoApellido) {
-        this.primerApellido = nuevoApellido
-    }
-    setSegundoApellido(nuevo2Apellido) {
-        this.segundoApellido = nuevo2Apellido
-    }
-    setfechaAlta(nuevaFA) {
-        this.fechaAlta = nuevaFA
-    }
-    setfechaBaja(nuevaFB) {
-        this.fechaBaja = nuevaFB
-    }
+   
     //metodo crear id de usuarios
     crearIdUsuario() {
         let letras = ['a', 'b', 'c', 'v', 'g', 'e', 'h', 'z', 'r'] //array de letras
@@ -62,7 +47,7 @@ class Usuario {
 //USUARIOS
 let usuario = new Usuario('Cris', 'Canosa', 'Perez', null, null)
 let usuario2 = new Usuario('Alberto', 'Fuentes', 'Rodriguez', null, null)
-let usuari3 = new Usuario('Victor', 'Dominguez', 'Fraga', null, null)
+let usuario3 = new Usuario('Victor', 'Dominguez', 'Fraga', null, null)
 let usuario4 = new Usuario('Pedro', 'Mansilla', 'Castro', null, null)
 let usuario5 = new Usuario('Silvia', 'Areas', 'Baldomir', null, null)
 let usuario6  = new Usuario('Alejgrando', 'Mato', 'Gagino', null, null)
