@@ -14,12 +14,12 @@
 
 
 class Libro {
-    constructor(titulo, autor, editorial, fechaprimeraedicion, prestado, venta, historicoPrestamos) {
-        this.id = id || this.getAleatoryId()
+    constructor(titulo, autor, editorial, fechaPrimeraEdicion, prestado, venta, historicoPrestamos) {
+        this.id = this.getAleatoryId()
         this.titulo = titulo || "crónica de una muerte anunciada"
         this.autor = autor || "gabriel garcía márquez"
         this.editorial = editorial || "alfaguara"
-        this.fechaprimeraedicion = fechaprimeraedicion || "20-12-1985"
+        this.fechaPrimeraEdicion = fechaPrimeraEdicion || "20-12-1985"
         this.prestado = this.esPrestado() // supongo que tengo que crear un método para esto
         this.venta = this.alaVenta() // supongo que aquí tengo que crear otro método para esto otro tb
         this.historicoPrestamos = this.historicoPrestamos()
@@ -41,13 +41,16 @@ class Libro {
         return Math.floor(Math.random * max)
     }
 
-    /*CAMBIA ESTO POR LOS PARAMETROS DE LA CLASE LIBRO*/
-    modificarLibros(modificarNombre, modificarPrimerApellido, modificarSegundoApellido, modificarFA, modificarFB) {
-        this.nombre = modificarNombre || this.nombre
-        this.primerApellido = modificarPrimerApellido || this.primerApellido
-        this.segundoApellido = modificarSegundoApellido || this.segundoApellido
-        this.fechaAlta = modificarFA || this.fechaAlta
-        this.fechaBaja = modificarFB || this.fechaBaja
+   
+    modificarLibros(modificarTitulo, modificarAutor, modificarEditorial, modificarFPE, modificarPrestado, modificarVenta, modificarHistoricoPrest) {
+        this.titulo = modificarTitulo || this.titulo
+        this.autor = modificarAutor || this.autor
+        this.editorial = modificarEditorial || this.editorial
+        this.fechaPrimeraEdicion = modificarFPE || this.fechaPrimeraEdicion
+        this.prestado = modificarPrestado || this.prestado
+        this.venta = modificarVenta || this.venta
+        this.historicoPrestamos = modificarHistoricoPrest || this.historicoPrestamos
+
     }
     
     borrarLibros(listLibros) {
@@ -61,5 +64,6 @@ class Libro {
 
 
 }
+
 export default Libro;
 //

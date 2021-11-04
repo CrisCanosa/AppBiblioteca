@@ -40,21 +40,5 @@ class Usuario {
 
 }
 
-//USUARIOS
-// let usuario = new Usuario('Cris', 'Suarez', 'Castro', null, null)
-// let usuario2 = new Usuario('Alberto', 'Fuentes', 'Rodriguez', null, null)
-// let usuario3 = new Usuario('Victor', 'Dominguez', 'Fraga', null, null)
-// let usuario4 = new Usuario('Pedro', 'Mansilla', 'Castro', null, null)
-// let usuario5 = new Usuario('Silvia', 'Areas', 'Baldomir', null, null)
-// let usuario6  = new Usuario('Alejgrando', 'Mato', 'Gagino', null, null)
 
-//MODIFICAR USUARIOS
-//usuario.modificarUsuarios('','Martinez','Tarrio', '', '')
-//usuario2.modificarUsuarios('Yago', '', '', '', '')
-
-
-//console.log(usuario2)
-
-// usuario.borrarUsuarios(usuario)
-// console.log('Borrado el usuario' + usuario)
 export default Usuario;
