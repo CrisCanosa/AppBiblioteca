@@ -1,17 +1,16 @@
-import {usuario} from './usuario.js'
-
 class transaccion {
-    constructor(id, id_libro_prest, id_usuario, id_bibliotecario, fecha_trans, tipo_prest){
-        this.id = id
-        this.id_libro_prest = id_libro_prest
-        this.id_usuario = id_usuario
-        this.id_bibliotecario = id_bibliotecario
-        this.fecha_trans = fecha_trans
-        this.tipo_prest = tipo_prest
+    constructor(idBibliotecario,idUsuario,idLibro){
+        this.idLibro = idLibro
+        this.idBibliotecario = idBibliotecario
+        this.idUsuario = idUsuario
+        this.fechaPrestamo = Date()
+        this.diasMaximo = 20
+        this.fechaLimitePrestamo = new Date(new Date().setDate(new Date().getDate() + 20))   
     }
 
-    calcularLibrosPrestados() {
-
-    }
+    fechaPrestamoExpirado() {
+       return Date() === this.fechaLimitePrestamo
+   }
 }
+
 export default transaccion;

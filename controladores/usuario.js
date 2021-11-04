@@ -1,12 +1,12 @@
 class Usuario {
-    constructor(nombre, primer_apellido, segundo_apellido, fecha_alta, fecha_baja) {
+    constructor(nombre, primerApellido, segundoApellido, fechaAlta, fechaBaja) {
         this.id = this.crearIdUsuario()
-        this.nombre = nombre || 'nombre'
-        this.primer_apellido = primer_apellido || 'primer_Apellido'
-        this.segundo_apellido = segundo_apellido || 'segundo_Apellido'
-        this.fecha_alta = fecha_alta || 'fecha_Alta'
-        this.fecha_baja = fecha_baja || 'fecha_baja'
-        
+        this.nombre = nombre || 'Sin nombre'
+        this.primerApellido = primerApellido || 'Sin primerApellido'
+        this.segundoApellido = segundoApellido || 'Sin segundoApellido'
+        this.fechaAlta = fechaAlta || Date()
+        this.fechaBaja = fechaBaja || 'Usuario Activo'
+
     }
 
     // //metodo que crea los usuarios ID
@@ -19,6 +19,8 @@ class Usuario {
     //         return idAleatorio
     //     }
     // }
+   
+    //metodo crear id de usuarios
     crearIdUsuario() {
         let letras = ['a', 'b', 'c', 'v', 'g', 'e', 'h', 'z', 'r'] //array de letras
         let numeros = [1, 3, 5, 7, 9, 0, 6, 4, 8] //array de números
@@ -27,37 +29,34 @@ class Usuario {
             usuarioID = usuarioID + letras[Math.ceil(Math.random() * letras.length - 1)] //generamos las letras
             usuarioID = usuarioID + numeros[Math.ceil(Math.random() * numeros.length - 1)] //generamos los numeros
         }
-        return usuarioID //devolvemos la contrasenha
-
+        return usuarioID //devolvemos el usuario ID
     }
-
     //metodo que modifica los usuarios 
-    // modificarUsuario(modificarUsu) {
-    //     if (typeof modificarId != 'string') { //comprobamos que sea un string
-    //         console.log('El nuevo id tiene que ser un string.')
-    //     } else if (modificarId.length <= 6) { //si no tiene 6 caracteres nos devuelve este mensaje
-    //         console.log('El nuevo id de usuario tiene que ser de más de 6 caracteres.')
-    //     } else {
-    //         this.id = modificarId //le decimos que la contraseña  ahora va a ser nuevaContrasenha
-    //     }
-    // }
-    //metodo que borra los usuarios ID
-    // borrarUsuariosId() {
-    //     const id = this.id
-    //     ids = 
-    // }
-
-
-    //metodo que calculo los libros prestados y también los que están vencidos
-    libros_prestados() {
-        let total = 0
-
-
+    modificarUsuarios(modificarNombre, modificarPrimerApellido, modificarSegundoApellido, modificarFA, modificarFB) {
+        this.nombre = modificarNombre || this.nombre
+        this.primerApellido = modificarPrimerApellido || this.primerApellido
+        this.segundoApellido = modificarSegundoApellido || this.segundoApellido
+        this.fechaAlta = modificarFA || this.fechaAlta
+        this.fechaBaja = modificarFB || this.fechaBaja
     }
+    //metodo que borra los usuarios ID
+    borrarUsuarios() {
+    }
+
 }
+//USUARIOS
+let usuario = new Usuario('Cris', 'Canosa', 'Perez', null, null)
+let usuario2 = new Usuario('Alberto', 'Fuentes', 'Rodriguez', null, null)
+let usuario3 = new Usuario('Victor', 'Dominguez', 'Fraga', null, null)
+let usuario4 = new Usuario('Pedro', 'Mansilla', 'Castro', null, null)
+let usuario5 = new Usuario('Silvia', 'Areas', 'Baldomir', null, null)
+let usuario6  = new Usuario('Alejgrando', 'Mato', 'Gagino', null, null)
 
-let usuario = new Usuario('Cris',null,null,null)
-console.log(usuario.id)
+//MODIFICAR USUARIOS
+usuario.modificarUsuarios('','Martinez','Tarrio', '', '')
+usuario2.modificarUsuarios('Yago', '', '', '', '')
 
+console.log(usuario)
+console.log(usuario2)
 
-//export default Usuario;
+export default Usuario;
