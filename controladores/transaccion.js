@@ -14,6 +14,5 @@ class Transaccion {
    }
 }
 
-let trans = new Transaccion()
-trans.fechaPrestamoExpirado()
+
 export default Transaccion;
