@@ -1,13 +1,10 @@
 //Importar las clases necesarias
-//import { libro } from "./controladores/libro.js";
-//import { transaccion } from "./controladores/transaccion.js";
+
 import Libro from "./controladores/libro.js";
 import Usuario from "./controladores/usuario.js";
-// import libro from "./controladores/libro.js";
-// import transaccion from "./controladores/transaccion.js"
+import Bibliotecario from "./controladores/bibliotecario.js";
 
 class Biblioteca {
-
     constructor(nombre, direccion, codigoPostal, pais) {
         this.id = this.crearIdBiblioteca()
         this.nombre = nombre || ''
@@ -29,7 +26,9 @@ class Biblioteca {
     }
 
 }
+
 let biblioteca = new Biblioteca('Vilas', 'Rúa Ribadavia, 5', '15007', 'España')
+console.log(biblioteca)
 
 //Creacion de usuarios
 
@@ -42,8 +41,9 @@ let usuario6 = new Usuario('Alejgrando', 'Mato', 'Gagino', null, null)
 
 let arrayUsuarios = []
 
-arrayUsuarios.push(usuario1,usuario2)
+arrayUsuarios.push(usuario1, usuario2)
 console.log(arrayUsuarios)
+
 //Borrar el usuario1
 usuario1.borrarUsuarios(arrayUsuarios)
 console.log(arrayUsuarios)
@@ -52,9 +52,26 @@ console.log(arrayUsuarios)
 usuario2.modificarUsuarios('Yago', '', '', '', '')
 console.log(usuario2)
 
-// //Creacion de libros
+//Creacion de libros
 
 // let libro1 = new Libro()
 // let arrayLibros = []
-
 // arrayLibros.push(libro1)
+
+
+//Creacion de los bibliotecarios
+let bibliotecario1 = new Bibliotecario('Roi', 'Baldomir', null, null, null)
+let bibliotecario2 = new Bibliotecario('Tamara', 'López', null, null, null)
+let bibliotecario3 = new Bibliotecario('María', 'Vázquez', null, null, null)
+
+let arrayBibliotecarios = []
+arrayBibliotecarios.push(bibliotecario1, bibliotecario2, bibliotecario3)
+console.log(arrayBibliotecarios)
+
+//Borrar el bibliotecario1
+bibliotecario1.borrarBibliotecarios(arrayBibliotecarios)
+console.log(arrayBibliotecarios)
+
+//MODIFICAR USUARIOS
+bibliotecario2.modificaBibliotecarios('Yago', '', '', '', '')
+console.log(bibliotecario2)

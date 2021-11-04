@@ -1,9 +1,9 @@
-import { transaccion } from "./transaccion.js";
-import { Usuario } from "./usuario.js";
+// import { transaccion } from "./transaccion.js";
+// import { Usuario } from "./usuario.js";
 
 class Bibliotecario{
-    constructor(id, nombre, primerApellido, segundoApellido, fechaAlta, fechaBaja){
-        this.id=id || this.crearIdBibliotecario()
+    constructor(nombre, primerApellido, segundoApellido, fechaAlta, fechaBaja){
+        this.id= this.crearIdBibliotecario()
         this.nombre=nombre || "nombre"
         this.primerApellido=primerApellido || "apellido1"
         this.segundoApellido=segundoApellido || "apellido2"
@@ -22,6 +22,21 @@ class Bibliotecario{
         return bibliotecarioID //devolvemos la contrasenha
 
     }
+    modificaBibliotecarios(modificarNombre, modificarPrimerApellido, modificarSegundoApellido, modificarFA, modificarFB) {
+        this.nombre = modificarNombre || this.nombre
+        this.primerApellido = modificarPrimerApellido || this.primerApellido
+        this.segundoApellido = modificarSegundoApellido || this.segundoApellido
+        this.fechaAlta = modificarFA || this.fechaAlta
+        this.fechaBaja = modificarFB || this.fechaBaja
+    }
+    //metodo que borra los usuarios
+    borrarBibliotecarios(listBibliotecarios) {
+        listBibliotecarios.forEach(e => {
+            if(this.id === e.id){
+                listBibliotecarios.splice(listBibliotecarios.indexOf(e), 1)
+            }
+        })
+    }
 
     //Método para conocer las transacciones que ya se han ejecutado
     transaccionesEjecutadas(){
@@ -30,13 +45,4 @@ class Bibliotecario{
 
 }
 
-let arrayBibliotecarios= []
-let bibliotecario1=new Bibliotecario('Roi', 'Baldomir')
-let bibliotecario2=new Bibliotecario('Tamara', 'López')
-let bibliotecario3=new Bibliotecario('María', 'Vázquez')
-console.log(bibliotecario1)
-console.log(bibliotecario2)
-console.log(bibliotecario3)
-
-arrayBibliotecarios.push(bibliotecario1,bibliotecario2,bibliotecario3)
-console.log(arrayBibliotecarios)
+export default Bibliotecario;
