@@ -31,7 +31,7 @@ class Biblioteca {
 
   /**
    * @version 0.0.1
-   * Método que añade un Usuario a la biblioteca, si el id del usuario no existe.
+   * Método que añade un Usuario a la biblioteca
    * @param {Usuario}
    *
    */
