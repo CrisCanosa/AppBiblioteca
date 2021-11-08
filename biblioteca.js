@@ -33,55 +33,31 @@ class Biblioteca {
    * @version 0.0.1
    * Método que añade un Usuario a la biblioteca, si el id del usuario no existe.
    * @param {Usuario}
-   * @return {boolean}
+   * 
    */
 
-  añadirUsuario(usuario) {
-    if (
-      this.usuarios.filter((usr) => {
-        return usr.id == usuario.id;
-      }).length == 0
-    ) {
-      this.usuarios.push(usuario);
-      return true;
-    }
-    return false;
+  añadirUsuario(nombre, primerApellido, segundoApellido, fechaBaja, fechaAlta) {
+      this.usuarios.push(new Usuario(nombre,primerApellido,segundoApellido,fechaAlta,fechaBaja));
   }
 
   /**
    * @version 0.0.1
    * Método que añade un Bibliotecarios a la biblioteca, si el id del bibliotecario no existe.
    * @param {Bibliotecario}
-   * @return {boolean}
+   * 
    */
-  añadirBibliotecario(bibliotecario) {
-    if (
-      this.bibliotecarios.filter((bltc) => {
-        return bib.id == bibliotecario.id;
-      }).length == 0
-    ) {
-      this.bibliotecarios.push(bibliotecario);
-      return true;
-    }
-    return false;
+  añadirBibliotecario(nombre, primerApellido, segundoApellido, fechaBaja, fechaAlta) {
+    this.bibliotecarios.push(new Bibliotecario(nombre,primerApellido,segundoApellido,fechaAlta,fechaBaja))
   }
 
    /**
    * @version 0.0.1
    * Método que añade un Bibliotecarios a la biblioteca, si el id del bibliotecario no existe.
    * @param {Libro}
-   * @return {boolean}
+   * 
    */
-  añadirLibro(libro) {
-    if (
-      this.libros.filter((lbr) => {
-        return lbr.id == libro.id;
-      }).length == 0
-    ) {
-      this.libros.push(libro);
-      return true;
-    }
-    return false;
+  añadirLibro(titulo,autor,editorial,fechaPrimeraEdicion,prestamo,venta) {
+    this.libros.push(new Libro(titulo,autor,editorial,fechaPrimeraEdicion,false,venta))
   }
 
   /**
@@ -90,29 +66,19 @@ class Biblioteca {
    * @param {Transaccion}
    * @return {boolean}
    */
-   añadirTransaccion(transaccion) {
-    if (
-      this.transacciones.filter((trnsccn) => {
-        return trnsccn.id == transaccion.id;
-      }).length == 0
-    ) {
-      this.transacciones.push(transaccion);
-      return true;
+   añadirTransaccion(libro,bibliotecario,usuario,tipoPrestamo) {
+    if(!libro.prestamo){
+        if(bibliotecario.fechaBaja >= new Date()){
+            if(usuario.listarLibros().length < 5){
+                this.transacciones.push(new Transaccion(bibliotecario.id, usuario.id, libro.id, tipoPrestamo))
+            }
+        }
     }
-    return false;
   }
   // Devolver los libros con el préstamo expirado
   devolverLibrosPrestamoExpirado(transaccion) {
-    if (
-      this.transacciones.reduce((trnsccn) => {
-        return this.trnsccn.fechaPrestamoExpirado  == true;
-      }).length == 0
-    ) {
-      this.transacciones.push(transaccion);
-      return true;
-    }
-    return false;
-  }
+    
+}
 }
 
 let arrayUsuarios = []
