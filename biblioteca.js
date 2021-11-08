@@ -56,8 +56,8 @@ class Biblioteca {
    */
   añadirBibliotecario(bibliotecario) {
     if (
-      this.biblitotecarios.filter((bltc) => {
-        return bltc.id == bibliotecario.id;
+      this.bibliotecarios.filter((bltc) => {
+        return bib.id == bibliotecario.id;
       }).length == 0
     ) {
       this.bibliotecarios.push(bibliotecario);
@@ -86,7 +86,7 @@ class Biblioteca {
 
   /**
    * @version 0.0.1
-   * Método que añade un Bibliotecarios a la biblioteca, si el id del bibliotecario no existe.
+   * Método que añade un Transacciones a la biblioteca, si el id del bibliotecario no existe.
    * @param {Transaccion}
    * @return {boolean}
    */
@@ -108,7 +108,7 @@ class Biblioteca {
         return this.trnsccn.fechaPrestamoExpirado  == true;
       }).length == 0
     ) {
-      this.libros.push(transaccion);
+      this.transacciones.push(transaccion);
       return true;
     }
     return false;
