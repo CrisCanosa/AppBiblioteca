@@ -6,11 +6,14 @@ class Usuario {
         this.segundoApellido = segundoApellido || 'Sin segundoApellido'
         this.fechaAlta = fechaAlta || Date()
         this.fechaBaja = fechaBaja || 'Usuario Activo'
-
     }
 
-  
-    //metodo crear id de usuarios
+
+    /**
+     * @version 0.0.1
+     * Método que crear el usuario ID
+     * @return {usuarioID}
+     */
     crearIdUsuario() {
         let letras = ['a', 'b', 'c', 'v', 'g', 'e', 'h', 'z', 'r'] //array de letras
         let numeros = [1, 3, 5, 7, 9, 0, 6, 4, 8] //array de números
@@ -21,7 +24,15 @@ class Usuario {
         }
         return usuarioID //devolvemos el usuario ID
     }
-    //metodo que modifica los usuarios 
+    /**
+    * @version 0.0.1
+    * Método que modifica los parámetros los usuarios.
+    * @param {modificarNombre} ,
+    * @param {modificarPrimerApellido},
+    * @param {modificarSegundoApellido}, 
+    * @param {modificarFA},
+    * @param {modificarFB}
+    */
     modificarUsuarios(modificarNombre, modificarPrimerApellido, modificarSegundoApellido, modificarFA, modificarFB) {
         this.nombre = modificarNombre || this.nombre
         this.primerApellido = modificarPrimerApellido || this.primerApellido
@@ -29,13 +40,35 @@ class Usuario {
         this.fechaAlta = modificarFA || this.fechaAlta
         this.fechaBaja = modificarFB || this.fechaBaja
     }
-    //metodo que borra los usuarios
+
+    /**
+   * @version 0.0.1
+   * Método que borra los usuarios
+   * @param {listUsuarios} ,
+   */
     borrarUsuarios(listUsuarios) {
         listUsuarios.forEach(e => {
-            if(this.id === e.id){
+            if (this.id === e.id) {
                 listUsuarios.splice(listUsuarios.indexOf(e), 1)
             }
         })
+    }
+    listarLibrosPrestados(listLibros, listUsuarios, listTransacciones) {
+        let transaccionesUsuario = []
+        let i = 0
+        listUsuarios.forEach(e =>{
+            if (e.id === this.id){
+                listTransacciones.forEach(f => {
+                    if(f.idUsuario === this.id){
+                        listLibros.forEach(k => {
+                            if(k.id === f.idLibro){
+                                console.log(k)
+                            }
+                        })
+                    }
+                })
+            }
+        } )
     }
 
 }

@@ -115,8 +115,12 @@ class Biblioteca {
   }
 }
 
+
 let biblioteca = new Biblioteca("Vilas", "Rúa Ribadavia, 5", "15007", "España");
 console.log(biblioteca);
+
+
+
 
 //Creacion de usuarios
 
@@ -130,15 +134,15 @@ let usuario6 = new Usuario("Alejgrando", "Mato", "Gagino", null, null);
 let arrayUsuarios = [];
 
 arrayUsuarios.push(usuario1, usuario2);
-console.log(arrayUsuarios);
+// console.log(arrayUsuarios);
 
 //Borrar el usuario1
 usuario1.borrarUsuarios(arrayUsuarios);
-console.log(arrayUsuarios);
+// console.log(arrayUsuarios);
 
 //MODIFICAR USUARIOS
 usuario2.modificarUsuarios("Yago", "", "", "", "");
-console.log(usuario2);
+// console.log(usuario2);
 
 //Creacion de libros
 
@@ -150,7 +154,7 @@ let libro3 = new Libro('Tokio Blues', 'Haruki Murakami', 'Alfaguara', '2013,01,0
 let arrayLibros = []
 arrayLibros.push(libro1,libro2,libro3)
 
-console.log(arrayLibros)
+// console.log(arrayLibros)
 
 
 
@@ -162,15 +166,22 @@ let bibliotecario3 = new Bibliotecario("María", "Vázquez", null, null, null);
 
 let arrayBibliotecarios = [];
 arrayBibliotecarios.push(bibliotecario1, bibliotecario2, bibliotecario3);
-console.log(arrayBibliotecarios);
+// console.log(arrayBibliotecarios);
 
 //Borrar el bibliotecario1
 bibliotecario1.borrarBibliotecarios(arrayBibliotecarios);
-console.log(arrayBibliotecarios);
+// console.log(arrayBibliotecarios);
 
 //MODIFICAR USUARIOS
 bibliotecario2.modificaBibliotecarios("Yago", "", "", "", "");
-console.log(bibliotecario2);
+// console.log(bibliotecario2);
 
 biblioteca.añadirUsuario(usuario1)
-console.log(biblioteca)
+// console.log(biblioteca)
+
+let transaccion1 = new Transaccion(bibliotecario1.id,usuario1.id,libro1.id)
+let transaccion2 = new Transaccion(bibliotecario2.id,usuario2.id,libro2.id)
+let arrayTransacciones = []
+arrayTransacciones.push(transaccion1,transaccion2)
+console.log(arrayTransacciones)
+usuario1.listarLibrosPrestados(arrayLibros,arrayUsuarios,arrayTransacciones)

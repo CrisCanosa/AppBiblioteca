@@ -20,8 +20,8 @@ class Libro {
         this.autor = autor || "gabriel garcía márquez"
         this.editorial = editorial || "alfaguara"
         this.fechaPrimeraEdicion = fechaPrimeraEdicion || new Date(1985,12,20)
-        this.prestado = prestado || "sí"
-        this.venta = venta || false
+        this.prestado = false
+        this.venta = false
         
     }
     crearIdLibro() {
