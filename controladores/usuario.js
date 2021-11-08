@@ -6,6 +6,7 @@ class Usuario {
         this.segundoApellido = segundoApellido || 'Sin segundoApellido'
         this.fechaAlta = fechaAlta || Date()
         this.fechaBaja = fechaBaja || 'Usuario Activo'
+        this.librosPrestados = [] || ''
     }
 
 
@@ -53,6 +54,11 @@ class Usuario {
             }
         })
     }
+    listarLibros() {
+        this.libros.forEach((librosPrestados) => {
+          console.log(librosPrestados);
+        });
+      }
     listarLibrosPrestados(listLibros, listUsuarios, listTransacciones) {
         listUsuarios.forEach(e =>{
             if (e.id === this.id){
@@ -69,7 +75,11 @@ class Usuario {
             }
         } )
     }
-
+    listarLibros() {
+        this.librosPrestados.forEach((libro) => {
+          console.log(libro);
+        });
+      }
 }
 
 

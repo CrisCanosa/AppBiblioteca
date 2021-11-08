@@ -141,38 +141,36 @@ class Biblioteca {
 
 let biblioteca = new Biblioteca("Vilas", "Rúa Ribadavia, 5", "15007", "España");
 
-biblioteca.añadirUsuario("Cris", "Suarez", "Castro", null, null);
-biblioteca.añadirUsuario("Alberto", "Fuentes", "Rodriguez", null, null);
-biblioteca.añadirUsuario("Victor", "Dominguez", "Fraga", null, null);
-biblioteca.añadirUsuario("Pedro", "Mansilla", "Castro", null, null);
-biblioteca.añadirUsuario("Silvia", "Areas", "Baldomir", null, null);
-biblioteca.añadirUsuario("Alejgrando", "Mato", "Gagino", null, null);
+let usuario1 = new Usuario("Cris", "Suarez", "Castro", null, null);
+let usuario2 = new Usuario("Alberto", "Fuentes", "Rodriguez", null, null);
+let usuario3 = new Usuario("Victor", "Dominguez", "Fraga", null, null);
+let usuario4 = new Usuario("Pedro", "Mansilla", "Castro", null, null);
+let usuario5 = new Usuario("Silvia", "Areas", "Baldomir", null, null);
+let usuario6 = new Usuario("Alejgrando", "Mato", "Gagino", null, null);
 
-biblioteca.añadirLibro(
-  "The White Tiger",
-  "Aravind Adiga",
-  "Alfaguara",
-  "2013,01,01",
-  null,
-  false
-);
-biblioteca.añadirLibro(
-  "The Danish Girl",
-  "David Ebershoff",
-  "Anagrama",
-  "2001,01,01",
-  null,
-  false
-);
-biblioteca.añadirLibro(
-  "Tokio Blues",
-  "Haruki Murakami",
-  "Alfaguara",
-  "2013,01,01",
-  null,
-  false
-);
+let libro1 = new Libro('The White Tiger', 'Aravind Adiga', 'Alfaguara', '2013,01,01', null, false)
+let libro2 = new Libro('The Danish Girl', 'David Ebershoff', 'Anagrama', '2001,01,01', null, false)
+let libro3 = new Libro('Tokio Blues', 'Haruki Murakami', 'Alfaguara', '2013,01,01', null, false)
 
-biblioteca.añadirBibliotecario("Roi", "Baldomir", null, null, null);
-biblioteca.añadirBibliotecario("Tamara", "López", null, null, null);
-biblioteca.añadirBibliotecario("María", "Vázquez", null, null, null);
+let bibliotecario1 = new Bibliotecario("Roi", "Baldomir", null, null, null);
+let bibliotecario2 = new Bibliotecario("Tamara", "López", null, null, null);
+let bibliotecario3 = new Bibliotecario("María", "Vázquez", null, null, null);
+
+let transaccion1 = new Transaccion(bibliotecario1.id,usuario1.id,libro1.id)
+let transaccion2 = new Transaccion(bibliotecario2.id,usuario2.id,libro2.id)
+
+
+
+biblioteca.añadirUsuario(usuario1)
+biblioteca.añadirLibro()
+biblioteca.listarLibros()
+biblioteca.añadirTransaccion()
+console.log(biblioteca)
+
+
+
+
+usuario1.listarLibrosPrestados(arrayLibros,arrayUsuarios,arrayTransacciones)
+console.log(listarLibrosPrestados)
+biblioteca.añadirTransaccion(transaccion1, transaccion2)
+console.log(biblioteca.transacciones)
