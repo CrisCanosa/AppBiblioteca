@@ -62,7 +62,7 @@ let libro3 = new Libro('Tokio Blues', 'Haruki Murakami', 'Alfaguara', '2013,01,0
 let arrayLibros = []
 arrayLibros.push(libro1,libro2,libro3)
 
-
+console.log(arrayLibros)
 
 
 
