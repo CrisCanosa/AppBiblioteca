@@ -130,7 +130,7 @@ class Biblioteca {
 
     console.log("#LIBROS EXPIRADOS#")
     this.libros.forEach((libro) => {
-      if (idLibrosExpirados.includes(libro.id)) {
+      if (idLibrosExpirados.includes(libro.id) && libro.prestado == true) {
         console.log("#################################")
         console.log(` ID : ${libro.id}        `)
         console.log(` Titulo: ${libro.titulo}`)
@@ -178,7 +178,7 @@ class Biblioteca {
         if (
           transaccion.idUsuario == usuario.id &&
           transaccion.fechaLimitePrestamo < new Date() &&
-          usuario.librosPrestados.findIndex((libro)=>{ return libro.id == transaccion.idLibro }) != 1
+          usuario.librosPrestados.findIndex((libro)=>{ return libro.id == transaccion.idLibro }) != -1
         ){
           avisos+=1
           console.log(
@@ -199,7 +199,7 @@ class Biblioteca {
    */
   listarLibros() {
     console.log("#LIBROS BIBLIOTECA#")
-    this.libros.forEach((libro, index) => {
+    this.libros.forEach((libro) => {
       console.log("#################################")
       console.log(` ID : ${libro.id}        `)
       console.log(` Titulo: ${libro.titulo}`)
