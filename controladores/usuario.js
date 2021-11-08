@@ -54,10 +54,9 @@ class Usuario {
         })
     }
     listarLibrosPrestados(listLibros, listUsuarios, listTransacciones) {
-        let transaccionesUsuario = []
-        let i = 0
         listUsuarios.forEach(e =>{
             if (e.id === this.id){
+                console.log(e)
                 listTransacciones.forEach(f => {
                     if(f.idUsuario === this.id){
                         listLibros.forEach(k => {
