@@ -1,6 +1,9 @@
 //Importar las clases necesarias
 
-import { Libro, Usuario, Transaccion, Bibliotecario } from "./controladores/*";
+import Libro from "./controladores/libro.js";
+import Usuario from "./controladores/usuario.js";
+import Bibliotecario from "./controladores/bibliotecario.js"
+import Transaccion from "./controladores/transaccion.js"
 
 class Biblioteca {
   constructor(nombre, direccion, codigoPostal, pais) {
@@ -12,7 +15,7 @@ class Biblioteca {
     this.usuarios = [];
     this.libros = [];
     this.bibliotecarios = [];
-    this.transacciones = [];
+    this.transacciones = [];    
   }
 
   /**
