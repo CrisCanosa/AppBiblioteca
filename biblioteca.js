@@ -1,6 +1,9 @@
 //Importar las clases necesarias
 
-import { Libro, Usuario, Transaccion, Bibliotecario } from "./controladores/*";
+import Libro from "./controladores/libro.js";
+import Usuario from "./controladores/usuario.js";
+import Bibliotecario from "./controladores/bibliotecario.js"
+import Transaccion from "./controladores/transaccion.js"
 
 class Biblioteca {
   constructor(nombre, direccion, codigoPostal, pais) {
@@ -12,7 +15,7 @@ class Biblioteca {
     this.usuarios = [];
     this.libros = [];
     this.bibliotecarios = [];
-    this.transacciones = [];
+    this.transacciones = [];    
   }
 
   /**
@@ -168,3 +171,6 @@ console.log(arrayBibliotecarios);
 //MODIFICAR USUARIOS
 bibliotecario2.modificaBibliotecarios("Yago", "", "", "", "");
 console.log(bibliotecario2);
+
+biblioteca.añadirUsuario(usuario1)
+console.log(biblioteca)
