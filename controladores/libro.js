@@ -15,7 +15,7 @@
 
 class Libro {
     constructor(titulo, autor, editorial, fechaPrimeraEdicion, prestado, venta) {
-        this.id = this.getAleatoryId()
+        this.id = this.crearIdLibro()
         this.titulo = titulo || "crónica de una muerte anunciada"
         this.autor = autor || "gabriel garcía márquez"
         this.editorial = editorial || "alfaguara"
@@ -24,22 +24,18 @@ class Libro {
         this.venta = venta || false
         
     }
-
-
-    getAleatoryId() {
-        let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
-        let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-        let id = ''
-        for (let i = 0; i < 6; i++) { //la i tiene que estar definida aquí porque sólo existe en el momento que existe el bucle
-            id = id + letters[this.getAleatoryNumber(letters.length)] + numbers[this.getAleatoryNumber(numbers.length)]
+    crearIdLibro() {
+        let letras = ['a', 'b', 'c', 'v', 'g', 'e', 'h', 'z', 'r'] //array de letras
+        let numeros = [1, 3, 5, 7, 9, 0, 6, 4, 8] //array de números
+        let LibroID = '' //string vacio donde se van a generar los id
+        for (let i = 0; i < 6; i++) { //definimos la i porque solo va a estar en el momento del bucle
+            LibroID = LibroID + letras[Math.ceil(Math.random() * letras.length - 1)] //generamos las letras
+            LibroID = LibroID + numeros[Math.ceil(Math.random() * numeros.length - 1)] //generamos los numeros
         }
-
-        return id
+        return LibroID //devolvemos el Libro ID
     }
 
-    getAleatoryNumber(max) {
-        return Math.floor(Math.random * max)
-    }
+    
 
    
     modificarLibros(modificarTitulo, modificarAutor, modificarEditorial, modificarFPE, modificarPrestado, modificarVenta, modificarHistoricoPrest) {
