@@ -168,3 +168,6 @@ console.log(arrayBibliotecarios);
 //MODIFICAR USUARIOS
 bibliotecario2.modificaBibliotecarios("Yago", "", "", "", "");
 console.log(bibliotecario2);
+
+biblioteca.añadirUsuario(usuario1)
+console.log(biblioteca)
