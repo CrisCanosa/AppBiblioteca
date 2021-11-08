@@ -20,26 +20,6 @@ class Transaccion {
         }
         return transaccionID //devolvemos la ID transacción
     }
-    modificarUsuarios(modificarNombre, modificarPrimerApellido, modificarSegundoApellido, modificarFA, modificarFB) {
-        this.nombre = modificarNombre || this.nombre
-        this.primerApellido = modificarPrimerApellido || this.primerApellido
-        this.segundoApellido = modificarSegundoApellido || this.segundoApellido
-        this.fechaAlta = modificarFA || this.fechaAlta
-        this.fechaBaja = modificarFB || this.fechaBaja
-    }
-
-    /**
-   * @version 0.0.1
-   * Método que borra los usuarios
-   * @param {listUsuarios} ,
-   */
-    borrarUsuarios(listUsuarios) {
-        listUsuarios.forEach(e => {
-            if (this.id === e.id) {
-                listUsuarios.splice(listUsuarios.indexOf(e), 1)
-            }
-        })
-    }
     fechaPrestamoExpirado() {
        return Date() >= this.fechaLimitePrestamo
    }
