@@ -54,9 +54,13 @@ console.log(usuario2)
 
 //Creacion de libros
 
-// let libro1 = new Libro()
-// let arrayLibros = []
-// arrayLibros.push(libro1)
+ let libro1 = new Libro()
+ let arrayLibros = []
+ arrayLibros.push(libro1)
+
+
+
+let libro1 = new Libro('The White Tiger', 'Aravind Adiga', 'Alfaguara', '2013,01,01', null, false)
 
 
 //Creacion de los bibliotecarios
