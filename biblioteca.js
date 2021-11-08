@@ -150,9 +150,11 @@ class Biblioteca {
    * 
    */
   listarLibrosPrestados() {
+    let totalLibrosPrestados = 0
     console.log("#LIBROS PRESTADOS#")
     this.libros.forEach((libro) => {
       if (libro.prestado) {
+        totalLibrosPrestados += 1
         console.log("#################################")
         console.log(` ID : ${libro.id}        `)
         console.log(` Titulo: ${libro.titulo}`)
@@ -164,6 +166,7 @@ class Biblioteca {
       }
     })
     console.log("#################################")
+    console.log(`TOTAL LIBROS PRESTADOS: ${totalLibrosPrestados}`)
   }
 
   /**
@@ -271,7 +274,7 @@ let libro0 = biblioteca.añadirLibro(
   null,
   false
 )
-biblioteca.añadirLibro(
+let libro1 = biblioteca.añadirLibro(
   "The Danish Girl",
   "David Ebershoff",
   "Anagrama",
@@ -279,7 +282,7 @@ biblioteca.añadirLibro(
   null,
   false
 )
-biblioteca.añadirLibro(
+let libro2 = biblioteca.añadirLibro(
   "Tokio Blues",
   "Haruki Murakami",
   "Alfaguara",
@@ -314,6 +317,18 @@ biblioteca.añadirTransaccion(
   bibliotecario0,
   usuario0,
   "7"
+)
+biblioteca.añadirTransaccion(
+  libro1,
+  bibliotecario0,
+  usuario0,
+  "14"
+)
+biblioteca.añadirTransaccion(
+  libro2,
+  bibliotecario0,
+  usuario0,
+  "31"
 )
 
 biblioteca.listarLibros()
