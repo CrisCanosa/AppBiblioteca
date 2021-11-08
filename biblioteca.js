@@ -56,7 +56,7 @@ class Biblioteca {
    */
   añadirBibliotecario(bibliotecario) {
     if (
-      this.biblitotecarios.filter((bltc) => {
+      this.bibliotecarios.filter((bltc) => {
         return bltc.id == bibliotecario.id;
       }).length == 0
     ) {
@@ -112,6 +112,10 @@ class Biblioteca {
       return true;
     }
     return false;
+  }
+
+  listarLibros(){
+
   }
 }
 
