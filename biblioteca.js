@@ -123,7 +123,7 @@ class Biblioteca {
    listarLibrosPrestamoExpirado() {
     let idLibrosExpirados = []
     this.transacciones.forEach((transaccion) => {
-      if (transaccion.fechaLimitePrestamo > new Date()) {
+      if (transaccion.fechaLimitePrestamo < new Date()) {
         idLibrosExpirados.push(transaccion.idLibro)
       }
     })
@@ -177,9 +177,10 @@ class Biblioteca {
       this.transacciones.forEach((transaccion) => {
         if (
           transaccion.idUsuario == usuario.id &&
-          transaccion.fechaLimitePrestamo > new Date() &&
-          usuario.librosPrestados.includes(transaccion.idLibro)
+          transaccion.fechaLimitePrestamo < new Date() &&
+          usuario.librosPrestados.findIndex((libro)=>{ return libro.id == transaccion.idLibro }) != 1
         ){
+          avisos+=1
           console.log(
             ` Usuario : ${usuario.id} ha sido avisado de prestamos expirados.`
           )
