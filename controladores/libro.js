@@ -14,15 +14,15 @@
 
 
 class Libro {
-    constructor(titulo, autor, editorial, fechaPrimeraEdicion, prestado, venta, historicoPrestamos) {
+    constructor(titulo, autor, editorial, fechaPrimeraEdicion, prestado, venta) {
         this.id = this.getAleatoryId()
         this.titulo = titulo || "crónica de una muerte anunciada"
         this.autor = autor || "gabriel garcía márquez"
         this.editorial = editorial || "alfaguara"
-        this.fechaPrimeraEdicion = fechaPrimeraEdicion || "20-12-1985"
-        this.prestado = this.esPrestado() // supongo que tengo que crear un método para esto
-        this.venta = this.alaVenta() // supongo que aquí tengo que crear otro método para esto otro tb
-        this.historicoPrestamos = this.historicoPrestamos()
+        this.fechaPrimeraEdicion = fechaPrimeraEdicion || new Date(1985,12,20)
+        this.prestado = prestado || "sí"
+        this.venta = venta || false
+        
     }
 
 
@@ -60,7 +60,22 @@ class Libro {
             }
         })
     }
+
+
+
+
+    /*
+    alaVenta() {
+        return this.venta
+
+
+        
+    }
+    */
     
+
+
+
 
 
 }

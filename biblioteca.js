@@ -54,13 +54,18 @@ console.log(usuario2)
 
 //Creacion de libros
 
- let libro1 = new Libro()
- let arrayLibros = []
- arrayLibros.push(libro1)
-
-
 
 let libro1 = new Libro('The White Tiger', 'Aravind Adiga', 'Alfaguara', '2013,01,01', null, false)
+let libro2 = new Libro('The Danish Girl', 'David Ebershoff', 'Anagrama', '2001,01,01', null, false)
+let libro3 = new Libro('Tokio Blues', 'Haruki Murakami', 'Alfaguara', '2013,01,01', null, false)
+
+let arrayLibros = []
+arrayLibros.push(libro1,libro2,libro3)
+
+
+
+
+
 
 
 //Creacion de los bibliotecarios
