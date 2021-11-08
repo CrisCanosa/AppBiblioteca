@@ -183,3 +183,26 @@ biblioteca.añadirTransaccion(
 );
 
 console.log("BIBLIOTECA ====> \n", biblioteca);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
