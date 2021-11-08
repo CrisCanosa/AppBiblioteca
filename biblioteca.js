@@ -89,7 +89,9 @@ class Biblioteca {
   }
 
   listarLibros(){
-
+    this.libros.forEach(e => {
+      console.log(e.id)
+    })
   }
 }
 
