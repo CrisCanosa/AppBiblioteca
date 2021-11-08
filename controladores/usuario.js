@@ -59,22 +59,22 @@ class Usuario {
           console.log(librosPrestados);
         });
       }
-    listarLibrosPrestados(listLibros, listUsuarios, listTransacciones) {
-        listUsuarios.forEach(e =>{
-            if (e.id === this.id){
-                console.log(e)
-                listTransacciones.forEach(f => {
-                    if(f.idUsuario === this.id){
-                        listLibros.forEach(k => {
-                            if(k.id === f.idLibro){
-                                console.log(k)
-                            }
-                        })
-                    }
-                })
-            }
-        } )
-    }
+    // listarLibrosPrestados(listLibros, listUsuarios, listTransacciones) {
+    //     listUsuarios.forEach(e =>{
+    //         if (e.id === this.id){
+    //             console.log(e)
+    //             listTransacciones.forEach(f => {
+    //                 if(f.idUsuario === this.id){
+    //                     listLibros.forEach(k => {
+    //                         if(k.id === f.idLibro){
+    //                             console.log(k)
+    //                         }
+    //                     })
+    //                 }
+    //             })
+    //         }
+    //     } )
+    // }
     listarLibros() {
         this.librosPrestados.forEach((libro) => {
           console.log(libro);
