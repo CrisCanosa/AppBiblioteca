@@ -36,7 +36,7 @@ class Biblioteca {
    *
    */
 
-  añadirUsuario(nombre, primerApellido, segundoApellido, fechaBaja, fechaAlta) {
+  añadirUsuario(nombre, primerApellido, segundoApellido, fechaAlta, fechaBaja) {
     this.usuarios.push(
       new Usuario(nombre, primerApellido, segundoApellido, fechaAlta, fechaBaja)
     );
@@ -52,8 +52,8 @@ class Biblioteca {
     nombre,
     primerApellido,
     segundoApellido,
-    fechaBaja,
-    fechaAlta
+    fechaAlta,
+    fechaBaja
   ) {
     this.bibliotecarios.push(
       new Bibliotecario(
@@ -74,7 +74,7 @@ class Biblioteca {
    */
   añadirLibro(titulo, autor, editorial, fechaPrimeraEdicion, prestamo, venta) {
     this.libros.push(
-      new Libro(titulo, autor, editorial, fechaPrimeraEdicion, false, venta)
+      new Libro(titulo, autor, editorial, fechaPrimeraEdicion, prestamo, venta)
     );
   }
 
@@ -86,31 +86,28 @@ class Biblioteca {
    */
   añadirTransaccion(libro, bibliotecario, usuario, tipoPrestamo) {
     if (!libro.prestamo) {
-      if (bibliotecario.fechaBaja >= new Date()) {
-        if (usuario.librosPrestados.length < 5) {
-          let libroIndex = this.libros.findIndex(libro);
-          let usuarioIndex = this.usuarios.findIndex(usuario);
-          let bibliotecarioIndex = this.bibliotecarios.findIndex(bibliotecario);
-          if (
-            libroIndex != -1 &&
-            usuarioIndex != -1 &&
-            bibliotecarioIndex != -1
-          ) {
+      if (usuario.librosPrestados.length < 5) {
+        let libroIndex = this.libros.findIndex(libro);
+        let usuarioIndex = this.usuarios.findIndex(usuario);
+        let bibliotecarioIndex = this.bibliotecarios.findIndex(bibliotecario);
+        if (
+          libroIndex != -1 &&
+          usuarioIndex != -1 &&
+          bibliotecarioIndex != -1
+        ) {
+          transaccion = new Transaccion(
+            bibliotecario.id,
+            usuario.id,
+            libro.id,
+            tipoPrestamo
+          );
 
-            transaccion = new Transaccion(
-              bibliotecario.id,
-              usuario.id,
-              libro.id,
-              tipoPrestamo
-            );
-
-            this.transacciones.push(transaccion);
-            this.libros[libroIndex].prestamo = true;
-            this.usuarios[usuarioIndex].librosPrestados.push(libro);
-            this.bibliotecarios[bibliotecarioIndex].arrayTransacciones.push(
-              transaccion
-            );
-          }
+          this.transacciones.push(transaccion);
+          this.libros[libroIndex].prestamo = true;
+          this.usuarios[usuarioIndex].librosPrestados.push(libro);
+          this.bibliotecarios[bibliotecarioIndex].arrayTransacciones.push(
+            transaccion
+          );
         }
       }
     }
@@ -131,8 +128,8 @@ class Biblioteca {
   }
 
   listarLibros() {
-    this.libros.forEach((libro) => {
-      console.log(libro);
+    this.libros.forEach((libro, index) => {
+      console.log("Libro" + index, libro);
     });
   }
 }
@@ -176,3 +173,13 @@ biblioteca.añadirLibro(
 biblioteca.añadirBibliotecario("Roi", "Baldomir", null, null, null);
 biblioteca.añadirBibliotecario("Tamara", "López", null, null, null);
 biblioteca.añadirBibliotecario("María", "Vázquez", null, null, null);
+
+biblioteca.listarLibros();
+
+biblioteca.añadirTransaccion(
+  biblioteca.libros[0],
+  biblioteca.bibliotecarios[0],
+  biblioteca.usuarios[0]
+);
+
+console.log("BIBLIOTECA ====> \n", biblioteca);
