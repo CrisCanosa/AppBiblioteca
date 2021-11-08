@@ -7,6 +7,7 @@ class Transaccion {
         this.fechaPrestamo = Date()
         this.fechaLimitePrestamo = new Date(new Date().setDate(new Date().getDate() + 20))
         this.fechaPrestamoExpirado = this.fechaPrestamoExpirado()   
+        this.tipoPrestamo = tipoPrestamo
     }
 
     crearIdTransaccion() {
