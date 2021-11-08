@@ -54,33 +54,12 @@ class Usuario {
             }
         })
     }
-    listarLibros() {
-        this.libros.forEach((librosPrestados) => {
-          console.log(librosPrestados);
+    listarLibrosPrestados() {
+        this.librosPrestados.forEach((libro, index) => {
+          console.log("Libro" + index, libro);
         });
       }
-    listarLibrosPrestados(listLibros, listUsuarios, listTransacciones) {
-        listUsuarios.forEach(e =>{
-            if (e.id === this.id){
-                console.log(e)
-                listTransacciones.forEach(f => {
-                    if(f.idUsuario === this.id){
-                        listLibros.forEach(k => {
-                            if(k.id === f.idLibro){
-                                console.log(k)
-                            }
-                        })
-                    }
-                })
-            }
-        } )
     }
-    listarLibros() {
-        this.librosPrestados.forEach((libro) => {
-          console.log(libro);
-        });
-      }
-}
 
 
 export default Usuario;

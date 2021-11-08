@@ -31,15 +31,17 @@ class Biblioteca {
 
   /**
    * @version 0.0.1
-   * Método que añade un Usuario a la biblioteca
+   * Método que añade un Usuario a la biblioteca, si el id del usuario no existe.
    * @param {Usuario}
    *
    */
 
   añadirUsuario(nombre, primerApellido, segundoApellido, fechaAlta, fechaBaja) {
+    let usuario = new Usuario(nombre, primerApellido, segundoApellido, fechaAlta, fechaBaja);
     this.usuarios.push(
-      new Usuario(nombre, primerApellido, segundoApellido, fechaAlta, fechaBaja)
+      usuario
     );
+    return usuario
   }
 
   /**
@@ -55,15 +57,15 @@ class Biblioteca {
     fechaAlta,
     fechaBaja
   ) {
-    this.bibliotecarios.push(
-      new Bibliotecario(
-        nombre,
-        primerApellido,
-        segundoApellido,
-        fechaAlta,
-        fechaBaja
-      )
+    let bibliotecario = new Bibliotecario(
+      nombre,
+      primerApellido,
+      segundoApellido,
+      fechaAlta,
+      fechaBaja
     );
+    this.bibliotecarios.push(bibliotecario);
+    return bibliotecario;
   }
 
   /**
@@ -72,10 +74,18 @@ class Biblioteca {
    * @param {Libro}
    *
    */
-  añadirLibro(titulo, autor, editorial, fechaPrimeraEdicion, prestamo, venta) {
-    this.libros.push(
-      new Libro(titulo, autor, editorial, fechaPrimeraEdicion, prestamo, venta)
+  añadirLibro(titulo, autor, editorial, fechaPrimeraEdicion, prestado, venta) {
+    let libro = new Libro(
+      titulo,
+      autor,
+      editorial,
+      fechaPrimeraEdicion,
+      prestado,
+      venta
     );
+
+    this.libros.push(libro);
+    return libro;
   }
 
   /**
@@ -85,17 +95,19 @@ class Biblioteca {
    * @return {boolean}
    */
   añadirTransaccion(libro, bibliotecario, usuario, tipoPrestamo) {
-    if (!libro.prestamo) {
+    if (!libro.prestado) {
       if (usuario.librosPrestados.length < 5) {
-        let libroIndex = this.libros.findIndex(libro);
-        let usuarioIndex = this.usuarios.findIndex(usuario);
-        let bibliotecarioIndex = this.bibliotecarios.findIndex(bibliotecario);
+        let libroIndex = this.libros.findIndex((el) => libro.id == el.id);
+        let usuarioIndex = this.usuarios.findIndex((el) => usuario.id == el.id);
+        let bibliotecarioIndex = this.bibliotecarios.findIndex(
+          (el) => el.id == bibliotecario.id
+        );
         if (
           libroIndex != -1 &&
           usuarioIndex != -1 &&
           bibliotecarioIndex != -1
         ) {
-          transaccion = new Transaccion(
+          let transaccion = new Transaccion(
             bibliotecario.id,
             usuario.id,
             libro.id,
@@ -103,11 +115,12 @@ class Biblioteca {
           );
 
           this.transacciones.push(transaccion);
-          this.libros[libroIndex].prestamo = true;
+          this.libros[libroIndex].prestado = true;
           this.usuarios[usuarioIndex].librosPrestados.push(libro);
           this.bibliotecarios[bibliotecarioIndex].arrayTransacciones.push(
             transaccion
           );
+          return transaccion;
         }
       }
     }
@@ -138,14 +151,14 @@ class Biblioteca {
 
 let biblioteca = new Biblioteca("Vilas", "Rúa Ribadavia, 5", "15007", "España");
 
-biblioteca.añadirUsuario("Cris", "Suarez", "Castro", null, null);
+let usuario0 = biblioteca.añadirUsuario("Cris", "Suarez", "Castro", null, null);
 biblioteca.añadirUsuario("Alberto", "Fuentes", "Rodriguez", null, null);
 biblioteca.añadirUsuario("Victor", "Dominguez", "Fraga", null, null);
 biblioteca.añadirUsuario("Pedro", "Mansilla", "Castro", null, null);
 biblioteca.añadirUsuario("Silvia", "Areas", "Baldomir", null, null);
 biblioteca.añadirUsuario("Alejgrando", "Mato", "Gagino", null, null);
 
-biblioteca.añadirLibro(
+let libro0 = biblioteca.añadirLibro(
   "The White Tiger",
   "Aravind Adiga",
   "Alfaguara",
@@ -170,39 +183,17 @@ biblioteca.añadirLibro(
   false
 );
 
-biblioteca.añadirBibliotecario("Roi", "Baldomir", null, null, null);
-biblioteca.añadirBibliotecario("Tamara", "López", null, null, null);
-biblioteca.añadirBibliotecario("María", "Vázquez", null, null, null);
+let bibliotecario0 = biblioteca.añadirBibliotecario("Roi", "Baldomir", null, null, null);
+let bibliotecario1 = biblioteca.añadirBibliotecario("Tamara", "López", null, null, null);
+let bibliotecario2 = biblioteca.añadirBibliotecario("María", "Vázquez", null, null, null);
 
 biblioteca.listarLibros();
 
 biblioteca.añadirTransaccion(
-  biblioteca.libros[0],
-  biblioteca.bibliotecarios[0],
-  biblioteca.usuarios[0]
+ libro0,
+  bibliotecario0,
+  usuario0,
+  "7"
 );
 
 console.log("BIBLIOTECA ====> \n", biblioteca);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

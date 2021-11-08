@@ -1,12 +1,11 @@
 class Transaccion {
-    constructor(idBibliotecario,idUsuario,idLibro){
+    constructor(idBibliotecario,idUsuario,idLibro, tipoPrestamo){
         this.id= this.crearIdTransaccion()
         this.idLibro = idLibro
         this.idBibliotecario = idBibliotecario
         this.idUsuario = idUsuario
         this.fechaPrestamo = Date()
-        this.fechaLimitePrestamo = new Date(new Date().setDate(new Date().getDate() + 20))
-        this.fechaPrestamoExpirado = this.fechaPrestamoExpirado()   
+        this.fechaLimitePrestamo = this.fechaPrestamoExpirado(tipoPrestamo)
         this.tipoPrestamo = tipoPrestamo
     }
 
@@ -20,8 +19,16 @@ class Transaccion {
         }
         return transaccionID //devolvemos la ID transacción
     }
-    fechaPrestamoExpirado() {
-       return Date() >= this.fechaLimitePrestamo
+
+    fechaPrestamoExpirado(tipoPrestamo) {
+        switch(tipoPrestamo){
+            case "7":
+                return new Date(new Date().setDate(new Date().getDate() + 7))
+            case "14":
+                return new Date(new Date().setDate(new Date().getDate() + 14))
+            case "31":
+                return new Date(new Date().setDate(new Date().getDate() + 31))
+        }
    }
 }
 
