@@ -1,6 +1,6 @@
 class Transaccion {
     constructor(idBibliotecario,idUsuario,idLibro){
-        this.idTransaccion= this.crearIdTransaccion()
+        this.id= this.crearIdTransaccion()
         this.idLibro = idLibro
         this.idBibliotecario = idBibliotecario
         this.idUsuario = idUsuario
