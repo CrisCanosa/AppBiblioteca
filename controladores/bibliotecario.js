@@ -20,7 +20,7 @@ class Bibliotecario{
         return bibliotecarioID //devolvemos la contrasenha
 
     }
-    //metodo para modificar los usuarios
+    //metodo para modificar los bibliotecarios
     modificarBibliotecarios(modificarNombre, modificarPrimerApellido, modificarSegundoApellido, modificarFA, modificarFB) {
         this.nombre = modificarNombre || this.nombre
         this.primerApellido = modificarPrimerApellido || this.primerApellido
@@ -28,7 +28,7 @@ class Bibliotecario{
         this.fechaAlta = modificarFA || this.fechaAlta
         this.fechaBaja = modificarFB || this.fechaBaja
     }
-    //metodo que borra los usuarios
+    //metodo que borra los bibliotecarios
     borrarBibliotecarios(listBibliotecarios) {
         listBibliotecarios.forEach(e => {
             if(this.id === e.id){
