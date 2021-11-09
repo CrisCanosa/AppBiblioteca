@@ -1,6 +1,3 @@
-// import { transaccion } from "./transaccion.js";
-// import { Usuario } from "./usuario.js";
-
 class Bibliotecario{
     constructor(nombre, primerApellido, segundoApellido, fechaAlta, fechaBaja){
         this.id= this.crearIdBibliotecario()
@@ -9,7 +6,6 @@ class Bibliotecario{
         this.segundoApellido=segundoApellido || "apellido2"
         this.fechaAlta=fechaAlta || new Date(2021,1,1)
         this.fechaBaja=fechaBaja || new Date(2021,1,2)
-        this.arrayTransacciones= []
     }
     
     crearIdBibliotecario() {
@@ -23,7 +19,8 @@ class Bibliotecario{
         return bibliotecarioID //devolvemos la contrasenha
 
     }
-    modificaBibliotecarios(modificarNombre, modificarPrimerApellido, modificarSegundoApellido, modificarFA, modificarFB) {
+    //metodo para modificar los usuarios
+    modificarBibliotecarios(modificarNombre, modificarPrimerApellido, modificarSegundoApellido, modificarFA, modificarFB) {
         this.nombre = modificarNombre || this.nombre
         this.primerApellido = modificarPrimerApellido || this.primerApellido
         this.segundoApellido = modificarSegundoApellido || this.segundoApellido
@@ -39,18 +36,10 @@ class Bibliotecario{
         })
     }
 
-    añadirTransaccion(transaccion) {
-        if (
-          this.arrayTransacciones.filter((trnsccn) => {
-            return trnsccn.id == transaccion.id;
-          }).length == 0
-        ) {
-          this.arrayTransacciones.push(transaccion);
-          return true;
-        }
-        return false;
-      }
-      
+    //metodo para mostrar las transacciones ya ejecutadas
+    transaccionesEjecutadas(){
+
+    }
 }
 
 export default Bibliotecario;
