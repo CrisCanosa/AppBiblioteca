@@ -7,6 +7,7 @@ class Bibliotecario{
         this.segundoApellido=segundoApellido || "apellido2"
         this.fechaAlta=fechaAlta || new Date(2021,1,1)
         this.fechaBaja=fechaBaja || new Date(2021,1,2)
+        this.arrayTransacciones= []
     }
     
     //metodo para generar un id aleatorio a cada bibliotecario
