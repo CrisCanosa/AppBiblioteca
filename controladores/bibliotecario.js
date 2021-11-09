@@ -1,5 +1,3 @@
-// import { transaccion } from "./transaccion.js";
-// import { Usuario } from "./usuario.js";
 
 class Bibliotecario{
     constructor(nombre, primerApellido, segundoApellido, fechaAlta, fechaBaja){
@@ -9,7 +7,6 @@ class Bibliotecario{
         this.segundoApellido=segundoApellido || "apellido2"
         this.fechaAlta=fechaAlta || new Date(2021,1,1)
         this.fechaBaja=fechaBaja || new Date(2021,1,2)
-        this.arrayTransacciones= []
     }
     
     //metodo para generar un id aleatorio a cada bibliotecario
@@ -21,15 +18,11 @@ class Bibliotecario{
             bibliotecarioID = bibliotecarioID + letras[Math.ceil(Math.random() * letras.length - 1)] //generamos las letras
             bibliotecarioID = bibliotecarioID + numeros[Math.ceil(Math.random() * numeros.length - 1)] //generamos los numeros
         }
-        return bibliotecarioID //devolvemos la contrasenha
+        return bibliotecarioID //devolvemos el id de bibliotecario
 
     }
-<<<<<<< HEAD
-    //metodo para modificar los bibliotecarios
-    modificarBibliotecarios(modificarNombre, modificarPrimerApellido, modificarSegundoApellido, modificarFA, modificarFB) {
-=======
+    //metodo que modifica los bibliotecarios
     modificaBibliotecarios(modificarNombre, modificarPrimerApellido, modificarSegundoApellido, modificarFA, modificarFB) {
->>>>>>> parent of c4d4b3d (Update bibliotecario.js)
         this.nombre = modificarNombre || this.nombre
         this.primerApellido = modificarPrimerApellido || this.primerApellido
         this.segundoApellido = modificarSegundoApellido || this.segundoApellido
@@ -45,17 +38,7 @@ class Bibliotecario{
         })
     }
 
-    añadirTransaccion(transaccion) {
-        if (
-          this.arrayTransacciones.filter((trnsccn) => {
-            return trnsccn.id == transaccion.id;
-          }).length == 0
-        ) {
-          this.arrayTransacciones.push(transaccion);
-          return true;
-        }
-        return false;
-      }
+   
       
 }
 
