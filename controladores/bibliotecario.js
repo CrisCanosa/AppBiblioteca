@@ -8,6 +8,7 @@ class Bibliotecario{
         this.fechaBaja=fechaBaja || new Date(2021,1,2)
     }
     
+    //metodo para generar un id aleatorio a cada bibliotecario
     crearIdBibliotecario() {
         let letras = ['a', 'b', 'c', 'v', 'g', 'e', 'h', 'z', 'r'] //array de letras
         let numeros = [1, 3, 5, 7, 9, 0, 6, 4, 8] //array de números
