@@ -16,7 +16,6 @@ class Biblioteca {
     this.bibliotecarios = []
     this.transacciones = []
   }
-
   /**
    * @version 0.0.1
    * Método que genera de forma aleatoria un id de la biblioteca con valor numérico de longitud 6
@@ -27,7 +26,6 @@ class Biblioteca {
     this.id = Math.floor(Math.random() * (999999 - 111111 + 1) + 111111)
     return this.id
   }
-
   /**
    * @version 0.0.1
    * Método que añade un usuario a la biblioteca
@@ -43,6 +41,7 @@ class Biblioteca {
     return usuario
   }
 
+ 
   /**
    * @version 0.0.1
    * Método que añade un bibliotecario a la biblioteca
@@ -58,12 +57,9 @@ class Biblioteca {
       fechaAlta,
       fechaBaja
     )
-
     this.bibliotecarios.push(bibliotecario)
-
     return bibliotecario
   }
-
   /**
    * @version 0.0.1
    * Método que añade un libro a la biblioteca
@@ -80,12 +76,10 @@ class Biblioteca {
       prestado,
       venta
     )
-
     this.libros.push(libro)
     
     return libro
   }
-
   /**
    * @version 0.0.1
    * Método que añade una transacciones a la biblioteca
@@ -103,12 +97,10 @@ class Biblioteca {
             libro.id,
             tipoPrestamo
           )
-
           this.transacciones.push(transaccion)
           libro.prestado = true
           usuario.librosPrestados.push(libro)
           bibliotecario.arrayTransacciones.push(transaccion)
-
           return transaccion
         }
       }
@@ -127,7 +119,6 @@ class Biblioteca {
         idLibrosExpirados.push(transaccion.idLibro)
       }
     })
-
     console.log("#LIBROS EXPIRADOS#")
     this.libros.forEach((libro) => {
       if (idLibrosExpirados.includes(libro.id) && libro.prestado == true) {
@@ -168,7 +159,6 @@ class Biblioteca {
     console.log("#################################")
     console.log(`TOTAL LIBROS PRESTADOS: ${totalLibrosPrestados}`)
   }
-
   /**
    * @version 0.0.1
    * Método que notifica a los usuarios que tengan préstamos expirados
@@ -194,7 +184,6 @@ class Biblioteca {
       console.log("Ningun usuario tiene libros con prestamo expirado")
     }
   }
-
   /**
    * @version 0.0.1
    * Método que lista los libros
@@ -215,9 +204,7 @@ class Biblioteca {
     console.log("#################################")
   }
 }
-
 //INTRODUCIR DATOS
-
 let biblioteca = new Biblioteca(
   "Vilas", 
   "Rúa Ribadavia, 5", 
@@ -228,6 +215,13 @@ let usuario0 = biblioteca.añadirUsuario(
   "Cris", 
   "Suarez", 
   "Castro", 
+  null, 
+  null
+)
+let usuario3 = biblioteca.añadirUsuario(
+  "Marcos", 
+  "Canosa", 
+  "Perez", 
   null, 
   null
 )
@@ -311,7 +305,6 @@ biblioteca.añadirBibliotecario(
   null, 
   null
 )
-
 biblioteca.añadirTransaccion(
   libro0,
   bibliotecario0,
@@ -335,3 +328,12 @@ biblioteca.listarLibros()
 biblioteca.listarLibrosPrestados()
 biblioteca.listarLibrosPrestamoExpirado()
 biblioteca.avisarUsuariosExpirados()
+
+//Prueba de modificación y borrado de un usuario
+console.log("#################################")
+console.log(`Procediendo a modificar el usuario ${usuario3.nombre} con id ${usuario3.id}`)
+usuario3.modificarUsuarios('Carlota')
+console.log(`El nuevo nombre del usuario es ${usuario3.nombre}`)
+usuario3.borrarUsuarios(biblioteca.usuarios)
+console.log(`Borrado el usuario ${usuario3.nombre} con id ${usuario3.id}`) 
+console.log("#################################")
