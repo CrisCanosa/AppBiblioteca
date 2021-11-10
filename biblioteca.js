@@ -343,5 +343,5 @@ console.log(`Procediendo a modificar el bibliotecario ${bibliotecario1.nombre} c
 bibliotecario1.modificaBibliotecarios('Marta', 'Rodríguez', 'Sánchez')
 console.log(`El nuevo nombre del usuario es ${bibliotecario1.nombre} ${bibliotecario1.primerApellido} ${bibliotecario1.segundoApellido}`)
 bibliotecario1.borrarBibliotecarios(biblioteca.bibliotecarios)
-console.log(`Borrado el usuario ${bibliotecario1.nombre} con id ${bibliotecario1.id}`) 
+console.log(`Borrado el bibliotecario ${bibliotecario1.nombre} con id ${bibliotecario1.id}`) 
 console.log("#################################")
