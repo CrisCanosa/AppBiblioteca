@@ -1,18 +1,3 @@
-/*Vilas 
-
-- LIBRO
-        - Id 
-        - Titulo
-        - Autor
-        - Editorial
-        - Fecha primera edición
-        - Está prestado
-        - Esta a la venta al publico (esto especifíca si el libro aún se vende en el mercado o ya no)
-
-
-*/
-
-
 class Libro {
     constructor(titulo, autor, editorial, fechaPrimeraEdicion, prestado, venta) {
         this.id = this.crearIdLibro()

@@ -1,12 +1,12 @@
 class Transaccion {
     constructor(idBibliotecario,idUsuario,idLibro, tipoPrestamo) {
-        this.id= this.crearIdTransaccion()
-        this.idLibro = idLibro
-        this.idBibliotecario = idBibliotecario
-        this.idUsuario = idUsuario
-        this.fechaPrestamo = Date()
-        this.fechaLimitePrestamo = this.fechaPrestamoExpirado(tipoPrestamo)
-        this.tipoPrestamo = tipoPrestamo
+        this.id= this.crearIdTransaccion() || ''
+        this.idLibro = idLibro || ''
+        this.idBibliotecario = idBibliotecario || ''
+        this.idUsuario = idUsuario || ''
+        this.fechaPrestamo = Date() || ''
+        this.fechaLimitePrestamo = this.fechaPrestamoExpirado(tipoPrestamo) || ''
+        this.tipoPrestamo = tipoPrestamo || '7'
     }
 
     /**

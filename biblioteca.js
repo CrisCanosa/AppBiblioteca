@@ -203,6 +203,7 @@ class Biblioteca {
     console.log("#################################")
   }
 }
+
 //INTRODUCIR DATOS
 let biblioteca = new Biblioteca(
   "Vilas", 
@@ -337,7 +338,7 @@ biblioteca.añadirTransaccion(
 // console.log(`Borrado el usuario ${usuario3.nombre} con id ${usuario3.id}`) 
 // console.log("#################################")
 
-// //Prueba de modificación y borrado de un bibliotecario
+//Prueba de modificación y borrado de un bibliotecario
 // console.log("#################################")
 // console.log(`Procediendo a modificar el bibliotecario ${bibliotecario1.nombre} con id ${bibliotecario1.id}`)
 // bibliotecario1.modificaBibliotecarios('Marta', 'Rodríguez', 'Sánchez')
