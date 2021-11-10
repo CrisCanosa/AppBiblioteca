@@ -1,5 +1,3 @@
-// import { transaccion } from "./transaccion.js";
-// import { Usuario } from "./usuario.js";
 
 class Bibliotecario{
     constructor(nombre, primerApellido, segundoApellido, fechaAlta, fechaBaja){
@@ -12,6 +10,7 @@ class Bibliotecario{
         this.arrayTransacciones= []
     }
     
+    //metodo para generar un id aleatorio a cada bibliotecario
     crearIdBibliotecario() {
         let letras = ['a', 'b', 'c', 'v', 'g', 'e', 'h', 'z', 'r'] //array de letras
         let numeros = [1, 3, 5, 7, 9, 0, 6, 4, 8] //array de números
@@ -20,9 +19,10 @@ class Bibliotecario{
             bibliotecarioID = bibliotecarioID + letras[Math.ceil(Math.random() * letras.length - 1)] //generamos las letras
             bibliotecarioID = bibliotecarioID + numeros[Math.ceil(Math.random() * numeros.length - 1)] //generamos los numeros
         }
-        return bibliotecarioID //devolvemos la contrasenha
+        return bibliotecarioID //devolvemos el id de bibliotecario
 
     }
+    //metodo que modifica los bibliotecarios
     modificaBibliotecarios(modificarNombre, modificarPrimerApellido, modificarSegundoApellido, modificarFA, modificarFB) {
         this.nombre = modificarNombre || this.nombre
         this.primerApellido = modificarPrimerApellido || this.primerApellido
@@ -30,7 +30,7 @@ class Bibliotecario{
         this.fechaAlta = modificarFA || this.fechaAlta
         this.fechaBaja = modificarFB || this.fechaBaja
     }
-    //metodo que borra los usuarios
+    //metodo que borra los bibliotecarios
     borrarBibliotecarios(listBibliotecarios) {
         listBibliotecarios.forEach(e => {
             if(this.id === e.id){
@@ -39,17 +39,7 @@ class Bibliotecario{
         })
     }
 
-    añadirTransaccion(transaccion) {
-        if (
-          this.arrayTransacciones.filter((trnsccn) => {
-            return trnsccn.id == transaccion.id;
-          }).length == 0
-        ) {
-          this.arrayTransacciones.push(transaccion);
-          return true;
-        }
-        return false;
-      }
+   
       
 }
 

@@ -62,6 +62,11 @@ class Usuario {
       }
     });
   }
+/**
+   * @version 0.0.1
+   * Método que muestra los libros prestados.
+   */
+  
   listarLibrosPrestados() {
     this.librosPrestados.forEach((libro, index) => {
       console.log("Libro" + index, libro);
