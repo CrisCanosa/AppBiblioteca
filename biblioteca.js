@@ -42,7 +42,7 @@ class Biblioteca {
     )
     return usuario
   }
-
+ 
   /**
    * @version 0.0.1
    * Método que añade un bibliotecario a la biblioteca
@@ -335,3 +335,11 @@ biblioteca.listarLibros()
 biblioteca.listarLibrosPrestados()
 biblioteca.listarLibrosPrestamoExpirado()
 biblioteca.avisarUsuariosExpirados()
+
+let usuario3 = new Usuario('Cris', 'Canosa', 'Perez', null, null)
+let arrayUsuarios = []
+
+arrayUsuarios.push(usuario3)
+
+usuario3.borrarUsuarios(arrayUsuarios)
+console.log('Borrado el usuario' + arrayUsuarios)
