@@ -290,7 +290,7 @@ let bibliotecario0 = biblioteca.añadirBibliotecario(
   null, 
   null
 )
-biblioteca.añadirBibliotecario(
+let bibliotecario1 = biblioteca.añadirBibliotecario(
   "Tamara", 
   "López", 
   null, 
@@ -335,4 +335,13 @@ usuario3.modificarUsuarios('Carlota')
 console.log(`El nuevo nombre del usuario es ${usuario3.nombre}`)
 usuario3.borrarUsuarios(biblioteca.usuarios)
 console.log(`Borrado el usuario ${usuario3.nombre} con id ${usuario3.id}`) 
+console.log("#################################")
+
+//Prueba de modificación y borrado de un bibliotecario
+console.log("#################################")
+console.log(`Procediendo a modificar el bibliotecario ${bibliotecario1.nombre} con id ${bibliotecario1.id}`)
+bibliotecario1.modificaBibliotecarios('Marta', 'Rodríguez', 'Sánchez')
+console.log(`El nuevo nombre del usuario es ${bibliotecario1.nombre} ${bibliotecario1.primerApellido} ${bibliotecario1.segundoApellido}`)
+bibliotecario1.borrarBibliotecarios(biblioteca.bibliotecarios)
+console.log(`Borrado el usuario ${bibliotecario1.nombre} con id ${bibliotecario1.id}`) 
 console.log("#################################")
