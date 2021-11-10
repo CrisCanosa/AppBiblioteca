@@ -323,25 +323,25 @@ biblioteca.añadirTransaccion(
   "31"
 )
 
-biblioteca.listarLibros()
-biblioteca.listarLibrosPrestados()
-biblioteca.listarLibrosPrestamoExpirado()
-biblioteca.avisarUsuariosExpirados()
+// biblioteca.listarLibros()
+// biblioteca.listarLibrosPrestados()
+// biblioteca.listarLibrosPrestamoExpirado()
+// biblioteca.avisarUsuariosExpirados()
 
-//Prueba de modificación y borrado de un usuario
-console.log("#################################")
-console.log(`Procediendo a modificar el usuario ${usuario3.nombre} con id ${usuario3.id}`)
-usuario3.modificarUsuarios('Carlota')
-console.log(`El nuevo nombre del usuario es ${usuario3.nombre}`)
-usuario3.borrarUsuarios(biblioteca.usuarios)
-console.log(`Borrado el usuario ${usuario3.nombre} con id ${usuario3.id}`) 
-console.log("#################################")
+// //Prueba de modificación y borrado de un usuario
+// console.log("#################################")
+// console.log(`Procediendo a modificar el usuario ${usuario3.nombre} con id ${usuario3.id}`)
+// usuario3.modificarUsuarios('Carlota')
+// console.log(`El nuevo nombre del usuario es ${usuario3.nombre}`)
+// usuario3.borrarUsuarios(biblioteca.usuarios)
+// console.log(`Borrado el usuario ${usuario3.nombre} con id ${usuario3.id}`) 
+// console.log("#################################")
 
-//Prueba de modificación y borrado de un bibliotecario
-console.log("#################################")
-console.log(`Procediendo a modificar el bibliotecario ${bibliotecario1.nombre} con id ${bibliotecario1.id}`)
-bibliotecario1.modificaBibliotecarios('Marta', 'Rodríguez', 'Sánchez')
-console.log(`El nuevo nombre del bibliotecario es ${bibliotecario1.nombre} ${bibliotecario1.primerApellido} ${bibliotecario1.segundoApellido}`)
-bibliotecario1.borrarBibliotecarios(biblioteca.bibliotecarios)
-console.log(`Borrado el bibliotecario ${bibliotecario1.nombre} con id ${bibliotecario1.id}`) 
-console.log("#################################")
+// //Prueba de modificación y borrado de un bibliotecario
+// console.log("#################################")
+// console.log(`Procediendo a modificar el bibliotecario ${bibliotecario1.nombre} con id ${bibliotecario1.id}`)
+// bibliotecario1.modificaBibliotecarios('Marta', 'Rodríguez', 'Sánchez')
+// console.log(`El nuevo nombre del bibliotecario es ${bibliotecario1.nombre} ${bibliotecario1.primerApellido} ${bibliotecario1.segundoApellido}`)
+// bibliotecario1.borrarBibliotecarios(biblioteca.bibliotecarios)
+// console.log(`Borrado el bibliotecario ${bibliotecario1.nombre} con id ${bibliotecario1.id}`) 
+// console.log("#################################")
