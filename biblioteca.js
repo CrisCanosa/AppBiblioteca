@@ -346,3 +346,12 @@ biblioteca.añadirTransaccion(
 // bibliotecario1.borrarBibliotecarios(biblioteca.bibliotecarios)
 // console.log(`Borrado el bibliotecario ${bibliotecario1.nombre} con id ${bibliotecario1.id}`) 
 // console.log("#################################")
+
+// Prueba de modificación y borrado de un libro
+// console.log("#################################")
+// console.log(`Procediendo a modificar el libro ${libro1.titulo} con id ${libro1.id}`)
+// libro1.modificarLibros('Últimos días en Berlín', 'Paloma Sánchez', 'Cegal')
+// console.log(`El nuevo nombre del libro es ${libro1.titulo} ${libro1.autor} ${libro1.editorial}`)
+// libro1.borrarLibros(biblioteca.libros)
+// console.log(`Borrado el libro ${libro1.titulo} con id ${libro1.id}`) 
+// console.log("#################################")
